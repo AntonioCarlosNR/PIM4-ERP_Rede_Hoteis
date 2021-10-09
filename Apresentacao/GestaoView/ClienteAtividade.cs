@@ -1,0 +1,28 @@
+﻿using PIM4.Modelo;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PIM4.Apresentacao.GestaoView
+{
+    public partial class ClienteAtividade : Form
+    {
+        public ClienteAtividade()
+        {
+            InitializeComponent();
+        }
+
+        private void btnCadastroCli_Click(object sender, EventArgs e)
+        {
+            //para chamar outra view instanciar a classe da view e chamar com .Show()
+            Cadastrar cadastra = new Cadastrar();
+            cadastra.Show();
+        }
+    }
+}
