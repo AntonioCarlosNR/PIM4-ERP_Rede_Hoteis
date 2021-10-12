@@ -32,5 +32,14 @@ namespace PIM4.Modelo
             }
             return Mensagem;
         }
+
+        public string agendar(string nome, int qtd, double valor, string checkin, string checkout)
+        {
+            Reserva reserva = new Reserva();
+            this.Mensagem = reserva.agendar(nome, qtd, valor, checkin, checkout);
+            
+            return Mensagem;
+        }
+
     }
 }

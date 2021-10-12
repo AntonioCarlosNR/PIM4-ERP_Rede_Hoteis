@@ -55,6 +55,7 @@ namespace PIM4.Apresentacao.GestaoView
             this.btnAgendaQuartos.TabIndex = 1;
             this.btnAgendaQuartos.Text = "Agendamento de Quartos";
             this.btnAgendaQuartos.UseVisualStyleBackColor = true;
+            this.btnAgendaQuartos.Click += new System.EventHandler(this.btnAgendaQuartos_Click);
             // 
             // btnAngedarAtv
             // 

@@ -1,4 +1,5 @@
-﻿using PIM4.Modelo;
+﻿using PIM4.Apresentacao.GestaoView.CliAtvModelo;
+using PIM4.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,12 @@ namespace PIM4.Apresentacao.GestaoView
             //para chamar outra view instanciar a classe da view e chamar com .Show()
             Cadastrar cadastra = new Cadastrar();
             cadastra.Show();
+        }
+
+        private void btnAgendaQuartos_Click(object sender, EventArgs e)
+        {
+            AgendamentoQuartos agendamento = new AgendamentoQuartos();
+            agendamento.Show();
         }
     }
 }
