@@ -37,7 +37,11 @@ namespace PIM4.Modelo
         {
             Reserva reserva = new Reserva();
             this.Mensagem = reserva.agendar(nome, qtd, valor, checkin, checkout);
-            
+            if (reserva.Existe)
+            {
+                this.Existe = true;
+            }
+
             return Mensagem;
         }
 

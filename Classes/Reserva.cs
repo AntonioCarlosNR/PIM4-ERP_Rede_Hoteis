@@ -15,7 +15,7 @@ namespace PIM4.Classes
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
-        public bool reserva;
+
         public bool verificarUsuario(string nome)
         {
             //comandos SQL se existem no BD 
@@ -29,8 +29,7 @@ namespace PIM4.Classes
                 dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
-                    Existe = true;
-                    reserva = true;
+                    Existe = true;      
                 }
                 con.desconection();
                 dr.Close();
@@ -42,12 +41,12 @@ namespace PIM4.Classes
             return Existe;
         }
         public string agendar(string nome, int qtd, double valor, string checkin, string checkout)
-        {      
-           //Existe = false;
-           //comandos para inserir no banco
-           
-                cmd.CommandText = "insert into TB_Reserva (Nm_Cliente,Qt_QuantidadeHospedes,Vl_Total,Ck_CheckIn,Ck_Checkout) values (@nome,@qtd,@valor,@checkin,@checkout);";
-                cmd.Parameters.AddWithValue("@nome", nome);
+        {
+            //Existe = false;
+
+            //comandos para inserir no banco
+            cmd.CommandText = "insert into TB_Reserva (Nm_Cliente,Qt_QuantidadeHospede,Vl_Total,Ck_CheckIn,Ck_Checkout) values (@nome,@qtd,@valor,@checkin,@checkout);";
+            cmd.Parameters.AddWithValue("@nome", nome);
                 cmd.Parameters.AddWithValue("@qtd", qtd);
                 cmd.Parameters.AddWithValue("@valor", valor);
                 cmd.Parameters.AddWithValue("@checkin", checkin);

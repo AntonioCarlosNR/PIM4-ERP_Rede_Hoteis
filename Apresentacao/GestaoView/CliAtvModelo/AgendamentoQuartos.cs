@@ -26,11 +26,9 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
         private void btnAgendarQuarto_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
-            // inserir campo pra nomes 
+            // inserir campo pra ID do cliente
             int qtd = int.Parse(txtQtdPessoas.Text);
             int valor = int.Parse(txtValor.Text);
-            
-            //MessageBox.Show(dtcheckin.Value.Date.ToString("yyyy-MM-dd"), "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
   
             string mensagem = controle.agendar(txtNomeHospede.Text, qtd, valor, dtcheckin.Value.Date.ToString("yyyy-MM-dd"), dtCheckout.Value.Date.ToString("yyyy-MM-dd"));
 
