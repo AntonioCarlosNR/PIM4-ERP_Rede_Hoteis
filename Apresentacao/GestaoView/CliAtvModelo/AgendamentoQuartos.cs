@@ -29,8 +29,9 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // inserir campo pra ID do cliente
             int qtd = int.Parse(txtQtdPessoas.Text);
             int valor = int.Parse(txtValor.Text);
+            int quarto = int.Parse(txtQuarto.Text);
   
-            string mensagem = controle.agendar(txtNomeHospede.Text, qtd, valor, dtcheckin.Value.Date.ToString("yyyy-MM-dd"), dtCheckout.Value.Date.ToString("yyyy-MM-dd"));
+            string mensagem = controle.agendar(txtNomeHospede.Text, qtd, valor, dtcheckin.Value.Date.ToString("yyyy-MM-dd"), dtCheckout.Value.Date.ToString("yyyy-MM-dd"),quarto);
 
             if (controle.Existe)
             {

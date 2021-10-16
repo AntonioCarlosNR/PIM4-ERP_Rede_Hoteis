@@ -40,6 +40,8 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.btnAgendarQuarto = new System.Windows.Forms.Button();
             this.lblValorPagar = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
+            this.lblQuarto = new System.Windows.Forms.Label();
+            this.txtQuarto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNomeHospede
@@ -79,7 +81,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             // dtcheckin
             // 
-            this.dtcheckin.Location = new System.Drawing.Point(199, 176);
+            this.dtcheckin.Location = new System.Drawing.Point(199, 205);
             this.dtcheckin.Name = "dtcheckin";
             this.dtcheckin.Size = new System.Drawing.Size(312, 27);
             this.dtcheckin.TabIndex = 4;
@@ -88,7 +90,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(118, 176);
+            this.label2.Location = new System.Drawing.Point(118, 205);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 21);
             this.label2.TabIndex = 5;
@@ -96,7 +98,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             // dtCheckout
             // 
-            this.dtCheckout.Location = new System.Drawing.Point(199, 230);
+            this.dtCheckout.Location = new System.Drawing.Point(199, 259);
             this.dtCheckout.Name = "dtCheckout";
             this.dtCheckout.Size = new System.Drawing.Size(312, 27);
             this.dtCheckout.TabIndex = 6;
@@ -105,7 +107,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             this.lblChechOut.AutoSize = true;
             this.lblChechOut.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblChechOut.Location = new System.Drawing.Point(106, 230);
+            this.lblChechOut.Location = new System.Drawing.Point(106, 259);
             this.lblChechOut.Name = "lblChechOut";
             this.lblChechOut.Size = new System.Drawing.Size(87, 21);
             this.lblChechOut.TabIndex = 7;
@@ -126,7 +128,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             this.lblValorPagar.AutoSize = true;
             this.lblValorPagar.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblValorPagar.Location = new System.Drawing.Point(288, 114);
+            this.lblValorPagar.Location = new System.Drawing.Point(140, 162);
             this.lblValorPagar.Name = "lblValorPagar";
             this.lblValorPagar.Size = new System.Drawing.Size(53, 21);
             this.lblValorPagar.TabIndex = 9;
@@ -134,16 +136,35 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(347, 112);
+            this.txtValor.Location = new System.Drawing.Point(199, 160);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(164, 27);
             this.txtValor.TabIndex = 10;
+            // 
+            // lblQuarto
+            // 
+            this.lblQuarto.AutoSize = true;
+            this.lblQuarto.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblQuarto.Location = new System.Drawing.Point(270, 112);
+            this.lblQuarto.Name = "lblQuarto";
+            this.lblQuarto.Size = new System.Drawing.Size(158, 21);
+            this.lblQuarto.TabIndex = 11;
+            this.lblQuarto.Text = "Numero do Quarto";
+            // 
+            // txtQuarto
+            // 
+            this.txtQuarto.Location = new System.Drawing.Point(434, 110);
+            this.txtQuarto.Name = "txtQuarto";
+            this.txtQuarto.Size = new System.Drawing.Size(77, 27);
+            this.txtQuarto.TabIndex = 12;
             // 
             // AgendamentoQuartos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 379);
+            this.Controls.Add(this.txtQuarto);
+            this.Controls.Add(this.lblQuarto);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.lblValorPagar);
             this.Controls.Add(this.btnAgendarQuarto);
@@ -176,5 +197,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
         private System.Windows.Forms.Button btnAgendarQuarto;
         private System.Windows.Forms.Label lblValorPagar;
         private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Label lblQuarto;
+        private System.Windows.Forms.TextBox txtQuarto;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -15,8 +16,9 @@ namespace PIM4.Classes
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
+        string id;
 
-        public bool verificarUsuario(string nome)
+        public string verificarUsuario(string nome)
         {
             //comandos SQL se existem no BD 
             cmd.CommandText = "select * from TB_Cliente where Nm_Cliente = @nome";
@@ -29,7 +31,7 @@ namespace PIM4.Classes
                 dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
-                    Existe = true;      
+                    Existe = true;
                 }
                 con.desconection();
                 dr.Close();
@@ -38,20 +40,20 @@ namespace PIM4.Classes
             {
                 this.Mensagem = "Erro com o Banco de dados!!";
             }
-            return Existe;
+            return id;
         }
-        public string agendar(string nome, int qtd, double valor, string checkin, string checkout)
+        public string agendar(string nome, int qtd, double valor, string checkin, string checkout, int quarto)
         {
             //Existe = false;
-
-            //comandos para inserir no banco
-            cmd.CommandText = "insert into TB_Reserva (Nm_Cliente,Qt_QuantidadeHospede,Vl_Total,Ck_CheckIn,Ck_Checkout) values (@nome,@qtd,@valor,@checkin,@checkout);";
-            cmd.Parameters.AddWithValue("@nome", nome);
-                cmd.Parameters.AddWithValue("@qtd", qtd);
-                cmd.Parameters.AddWithValue("@valor", valor);
-                cmd.Parameters.AddWithValue("@checkin", checkin);
-                cmd.Parameters.AddWithValue("@checkout", checkout);
             
+            cmd.CommandText = "insert into TB_Reserva (Nm_Cliente,Qt_QuantidadeHospede,Vl_Total,Ck_CheckIn,Ck_Checkout,Nm_Quarto) values (@nome,@qtd,@valor,@checkin,@checkout,@quarto);";
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@qtd", qtd);
+            cmd.Parameters.AddWithValue("@valor", valor);
+            cmd.Parameters.AddWithValue("@checkin", checkin);
+            cmd.Parameters.AddWithValue("@checkout", checkout);
+            cmd.Parameters.AddWithValue("@quarto", quarto);
+
 
             try
             {

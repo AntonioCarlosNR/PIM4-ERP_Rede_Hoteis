@@ -33,10 +33,10 @@ namespace PIM4.Modelo
             return Mensagem;
         }
 
-        public string agendar(string nome, int qtd, double valor, string checkin, string checkout)
+        public string agendar(string nome, int qtd, double valor, string checkin, string checkout, int quarto)
         {
             Reserva reserva = new Reserva();
-            this.Mensagem = reserva.agendar(nome, qtd, valor, checkin, checkout);
+            this.Mensagem = reserva.agendar(nome, qtd, valor, checkin, checkout, quarto);
             if (reserva.Existe)
             {
                 this.Existe = true;
