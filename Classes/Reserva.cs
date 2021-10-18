@@ -16,13 +16,13 @@ namespace PIM4.Classes
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
-        string id;
+        public int id = 0;
 
-        public string verificarUsuario(string nome)
+        public int verificarUsuario(string nome)
         {
             //comandos SQL se existem no BD 
             cmd.CommandText = "select * from TB_Cliente where Nm_Cliente = @nome";
-            cmd.Parameters.AddWithValue("@login", nome);
+            cmd.Parameters.AddWithValue("@nome", nome);
 
             try
             {
@@ -32,6 +32,8 @@ namespace PIM4.Classes
                 if (dr.HasRows)
                 {
                     Existe = true;
+                    dr.Read();
+                    id = dr.GetInt32(0);
                 }
                 con.desconection();
                 dr.Close();
@@ -42,18 +44,18 @@ namespace PIM4.Classes
             }
             return id;
         }
-        public string agendar(string nome, int qtd, double valor, string checkin, string checkout, int quarto)
+        public string agendar(string nome, int qtd, double valor, string checkin, string checkout, int quarto, int id)
         {
             //Existe = false;
             
-            cmd.CommandText = "insert into TB_Reserva (Nm_Cliente,Qt_QuantidadeHospede,Vl_Total,Ck_CheckIn,Ck_Checkout,Nm_Quarto) values (@nome,@qtd,@valor,@checkin,@checkout,@quarto);";
+            cmd.CommandText = "insert into TB_Reserva (Nm_Cliente,Qt_QuantidadeHospede,Vl_Total,Ck_CheckIn,Ck_Checkout,Nm_Quarto,ID_Cliente) values (@nome,@qtd,@valor,@checkin,@checkout,@quarto,@id);";
             cmd.Parameters.AddWithValue("@nome", nome);
             cmd.Parameters.AddWithValue("@qtd", qtd);
             cmd.Parameters.AddWithValue("@valor", valor);
             cmd.Parameters.AddWithValue("@checkin", checkin);
             cmd.Parameters.AddWithValue("@checkout", checkout);
             cmd.Parameters.AddWithValue("@quarto", quarto);
-
+            cmd.Parameters.AddWithValue("@id", id);
 
             try
             {

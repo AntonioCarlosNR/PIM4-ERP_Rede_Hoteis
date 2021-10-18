@@ -10,6 +10,7 @@ namespace PIM4.Modelo
     public class Controle
     {
         public bool Existe;
+        public int id;
         public string Mensagem ="";
         public bool acessar(string login, string senha)
         {
@@ -33,10 +34,20 @@ namespace PIM4.Modelo
             return Mensagem;
         }
 
-        public string agendar(string nome, int qtd, double valor, string checkin, string checkout, int quarto)
+        public int getIdCliente(string nome)
         {
             Reserva reserva = new Reserva();
-            this.Mensagem = reserva.agendar(nome, qtd, valor, checkin, checkout, quarto);
+            id = reserva.verificarUsuario(nome);
+            if (reserva.Mensagem.Equals(""))
+            {
+                this.Mensagem = reserva.Mensagem;
+            }
+            return id;
+        }
+        public string agendar(string nome, int qtd, double valor, string checkin, string checkout, int quarto, int id)
+        {
+            Reserva reserva = new Reserva();
+            this.Mensagem = reserva.agendar(nome, qtd, valor, checkin, checkout, quarto, id);
             if (reserva.Existe)
             {
                 this.Existe = true;

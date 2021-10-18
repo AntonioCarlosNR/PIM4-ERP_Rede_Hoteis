@@ -26,12 +26,14 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
         private void btnAgendarQuarto_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
+            txtId.Text = Convert.ToString(controle.getIdCliente(txtNomeHospede.Text));
+
             // inserir campo pra ID do cliente
             int qtd = int.Parse(txtQtdPessoas.Text);
             int valor = int.Parse(txtValor.Text);
             int quarto = int.Parse(txtQuarto.Text);
   
-            string mensagem = controle.agendar(txtNomeHospede.Text, qtd, valor, dtcheckin.Value.Date.ToString("yyyy-MM-dd"), dtCheckout.Value.Date.ToString("yyyy-MM-dd"),quarto);
+            string mensagem = controle.agendar(txtNomeHospede.Text, qtd, valor, dtcheckin.Value.Date.ToString("yyyy-MM-dd"), dtCheckout.Value.Date.ToString("yyyy-MM-dd"),quarto, controle.getIdCliente(txtNomeHospede.Text));
 
             if (controle.Existe)
             {

@@ -42,6 +42,8 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.txtValor = new System.Windows.Forms.TextBox();
             this.lblQuarto = new System.Windows.Forms.Label();
             this.txtQuarto = new System.Windows.Forms.TextBox();
+            this.lblIdCliente = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNomeHospede
@@ -158,11 +160,30 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.txtQuarto.Size = new System.Drawing.Size(77, 27);
             this.txtQuarto.TabIndex = 12;
             // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIdCliente.Location = new System.Drawing.Point(399, 162);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(32, 21);
+            this.lblIdCliente.TabIndex = 13;
+            this.lblIdCliente.Text = "ID";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(437, 160);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(74, 27);
+            this.txtId.TabIndex = 14;
+            // 
             // AgendamentoQuartos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 379);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblIdCliente);
             this.Controls.Add(this.txtQuarto);
             this.Controls.Add(this.lblQuarto);
             this.Controls.Add(this.txtValor);
@@ -199,5 +220,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label lblQuarto;
         private System.Windows.Forms.TextBox txtQuarto;
+        private System.Windows.Forms.Label lblIdCliente;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
