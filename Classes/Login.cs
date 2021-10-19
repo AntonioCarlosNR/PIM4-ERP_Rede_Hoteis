@@ -14,6 +14,13 @@ namespace PIM4.Classes
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
+        public int id;
+        public string nome;
+        public string endereco;
+        public string email;
+        public decimal fone;
+        public decimal doc;
+
         public bool verificarlogin(string login, string senha)
         {
             //comandos SQL se existem no BD 
@@ -75,6 +82,37 @@ namespace PIM4.Classes
             }
                 
             return Mensagem;
+        }
+        public void buscaIdusuario(int id_cli)
+        {
+            //comandos SQL se existem no BD 
+            cmd.CommandText = "select * from TB_Cliente where ID_Cliente = @id";
+            cmd.Parameters.AddWithValue("@id", id_cli);
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                //ExecuteReader() usado quando tem retorno tipo select
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    Existe = true;
+                    dr.Read();
+                    id = dr.GetInt32(0);
+                    nome = dr.GetString(1);
+                    endereco = dr.GetString(2);
+                    email = dr.GetString(3);
+                    fone = dr.GetDecimal(4);
+                    doc = dr.GetDecimal(5);
+
+                }
+                con.desconection();
+                dr.Close();
+            }
+            catch (SqlException)
+            {
+                this.Mensagem = "Erro com o Banco de dados!!";
+            }
         }
     }
 }

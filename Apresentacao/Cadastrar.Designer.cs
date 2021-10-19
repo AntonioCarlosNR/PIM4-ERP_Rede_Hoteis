@@ -44,13 +44,16 @@ namespace PIM4.Apresentacao
             this.lblConfSenha = new System.Windows.Forms.Label();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.txtEndereco = new System.Windows.Forms.TextBox();
+            this.lblIdCliente = new System.Windows.Forms.Label();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLogin.Location = new System.Drawing.Point(37, 126);
+            this.lblLogin.Location = new System.Drawing.Point(37, 148);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(115, 21);
             this.lblLogin.TabIndex = 0;
@@ -60,7 +63,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSenha.Location = new System.Drawing.Point(95, 183);
+            this.lblSenha.Location = new System.Drawing.Point(95, 205);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(57, 21);
             this.lblSenha.TabIndex = 1;
@@ -70,7 +73,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTelefone.Location = new System.Drawing.Point(76, 279);
+            this.lblTelefone.Location = new System.Drawing.Point(76, 301);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(76, 21);
             this.lblTelefone.TabIndex = 2;
@@ -78,28 +81,28 @@ namespace PIM4.Apresentacao
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(158, 126);
+            this.txtLogin.Location = new System.Drawing.Point(158, 148);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(323, 27);
             this.txtLogin.TabIndex = 3;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(158, 181);
+            this.txtSenha.Location = new System.Drawing.Point(158, 203);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(323, 27);
             this.txtSenha.TabIndex = 4;
             // 
             // txtFone
             // 
-            this.txtFone.Location = new System.Drawing.Point(158, 277);
+            this.txtFone.Location = new System.Drawing.Point(158, 299);
             this.txtFone.Name = "txtFone";
             this.txtFone.Size = new System.Drawing.Size(125, 27);
             this.txtFone.TabIndex = 5;
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(347, 277);
+            this.txtCpf.Location = new System.Drawing.Point(347, 299);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(134, 27);
             this.txtCpf.TabIndex = 6;
@@ -108,7 +111,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblCpf.AutoSize = true;
             this.lblCpf.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCpf.Location = new System.Drawing.Point(296, 277);
+            this.lblCpf.Location = new System.Drawing.Point(296, 299);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(45, 21);
             this.lblCpf.TabIndex = 7;
@@ -116,7 +119,7 @@ namespace PIM4.Apresentacao
             // 
             // btnCadastrese
             // 
-            this.btnCadastrese.Location = new System.Drawing.Point(158, 323);
+            this.btnCadastrese.Location = new System.Drawing.Point(158, 345);
             this.btnCadastrese.Name = "btnCadastrese";
             this.btnCadastrese.Size = new System.Drawing.Size(323, 40);
             this.btnCadastrese.TabIndex = 8;
@@ -128,7 +131,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNome.Location = new System.Drawing.Point(94, 32);
+            this.lblNome.Location = new System.Drawing.Point(94, 54);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(58, 21);
             this.lblNome.TabIndex = 9;
@@ -136,14 +139,14 @@ namespace PIM4.Apresentacao
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(158, 30);
+            this.txtNome.Location = new System.Drawing.Point(158, 52);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(323, 27);
             this.txtNome.TabIndex = 10;
             // 
             // txtConfSenha
             // 
-            this.txtConfSenha.Location = new System.Drawing.Point(158, 230);
+            this.txtConfSenha.Location = new System.Drawing.Point(158, 252);
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.Size = new System.Drawing.Size(323, 27);
             this.txtConfSenha.TabIndex = 11;
@@ -153,7 +156,7 @@ namespace PIM4.Apresentacao
             this.lblConfSenha.AutoEllipsis = true;
             this.lblConfSenha.AutoSize = true;
             this.lblConfSenha.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblConfSenha.Location = new System.Drawing.Point(14, 230);
+            this.lblConfSenha.Location = new System.Drawing.Point(14, 252);
             this.lblConfSenha.Name = "lblConfSenha";
             this.lblConfSenha.Size = new System.Drawing.Size(138, 21);
             this.lblConfSenha.TabIndex = 12;
@@ -163,7 +166,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEndereco.Location = new System.Drawing.Point(70, 80);
+            this.lblEndereco.Location = new System.Drawing.Point(70, 102);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(82, 21);
             this.lblEndereco.TabIndex = 13;
@@ -171,16 +174,47 @@ namespace PIM4.Apresentacao
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(158, 78);
+            this.txtEndereco.Location = new System.Drawing.Point(158, 100);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(323, 27);
             this.txtEndereco.TabIndex = 14;
+            // 
+            // lblIdCliente
+            // 
+            this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIdCliente.Location = new System.Drawing.Point(61, 12);
+            this.lblIdCliente.Name = "lblIdCliente";
+            this.lblIdCliente.Size = new System.Drawing.Size(91, 21);
+            this.lblIdCliente.TabIndex = 15;
+            this.lblIdCliente.Text = "ID Cliente";
+            // 
+            // txtIdCliente
+            // 
+            this.txtIdCliente.Location = new System.Drawing.Point(158, 10);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.Size = new System.Drawing.Size(77, 27);
+            this.txtIdCliente.TabIndex = 16;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscar.Location = new System.Drawing.Point(247, 8);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(94, 29);
+            this.btnBuscar.TabIndex = 17;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Cadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(506, 400);
+            this.ClientSize = new System.Drawing.Size(510, 429);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtIdCliente);
+            this.Controls.Add(this.lblIdCliente);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.lblConfSenha);
@@ -221,5 +255,8 @@ namespace PIM4.Apresentacao
         private System.Windows.Forms.Label lblConfSenha;
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.TextBox txtEndereco;
+        private System.Windows.Forms.Label lblIdCliente;
+        private System.Windows.Forms.TextBox txtIdCliente;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

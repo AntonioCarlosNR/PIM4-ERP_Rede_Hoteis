@@ -36,5 +36,17 @@ namespace PIM4.Apresentacao
             }
 
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Controle controle = new Controle();
+            int id = Convert.ToInt32(txtIdCliente.Text);
+            controle.IdCliente(id);
+            txtNome.Text = controle.nome;
+            txtEndereco.Text = controle.endereco;
+            txtLogin.Text = controle.email;
+            txtFone.Text = Convert.ToString(controle.fone);
+            txtCpf.Text = Convert.ToString(controle.doc);
+        }
     }
 }

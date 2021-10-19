@@ -12,6 +12,12 @@ namespace PIM4.Modelo
         public bool Existe;
         public int id;
         public string Mensagem ="";
+        public int id_cliente;
+        public string nome;
+        public string endereco;
+        public string email;
+        public decimal fone;
+        public decimal doc;
         public bool acessar(string login, string senha)
         {
             Login login1 = new Login();
@@ -22,7 +28,8 @@ namespace PIM4.Modelo
             }
             return Existe;
         }
-
+        
+        //Cadastrar Usuario
         public string cadastrar(string nome, string endereco,string email, string senha, string confsenha, long telefone, long cpf)
         {
             Login login1 = new Login();
@@ -33,7 +40,23 @@ namespace PIM4.Modelo
             }
             return Mensagem;
         }
+        public void IdCliente(int id_cli)
+        {
+            Login login = new Login();
+            login.buscaIdusuario(id_cli);
+            id_cliente = login.id ;
+            nome = login.nome;
+            endereco = login.endereco;
+            email = login.email;
+            fone = login.fone;
+            doc = login.doc;
+            if (login.Mensagem.Equals(""))
+            {
+                this.Mensagem = login.Mensagem;
+            }
+        }
 
+        //Agendamento de quarto
         public int getIdCliente(string nome)
         {
             Reserva reserva = new Reserva();

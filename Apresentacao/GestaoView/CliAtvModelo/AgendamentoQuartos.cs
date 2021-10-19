@@ -28,21 +28,29 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             Controle controle = new Controle();
             txtId.Text = Convert.ToString(controle.getIdCliente(txtNomeHospede.Text));
 
-            // inserir campo pra ID do cliente
-            int qtd = int.Parse(txtQtdPessoas.Text);
-            int valor = int.Parse(txtValor.Text);
-            int quarto = int.Parse(txtQuarto.Text);
-  
-            string mensagem = controle.agendar(txtNomeHospede.Text, qtd, valor, dtcheckin.Value.Date.ToString("yyyy-MM-dd"), dtCheckout.Value.Date.ToString("yyyy-MM-dd"),quarto, controle.getIdCliente(txtNomeHospede.Text));
-
-            if (controle.Existe)
+            if(controle.getIdCliente(txtNomeHospede.Text) != 0)
             {
-                MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // inserir campo pra ID do cliente
+                int qtd = int.Parse(txtQtdPessoas.Text);
+                int valor = int.Parse(txtValor.Text);
+                int quarto = int.Parse(txtQuarto.Text);
+
+                string mensagem = controle.agendar(txtNomeHospede.Text, qtd, valor, dtcheckin.Value.Date.ToString("yyyy-MM-dd"), dtCheckout.Value.Date.ToString("yyyy-MM-dd"), quarto, controle.getIdCliente(txtNomeHospede.Text));
+
+                if (controle.Existe)
+                {
+                    MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(controle.Mensagem);
+                }
             }
             else
             {
-                MessageBox.Show(controle.Mensagem);
+                MessageBox.Show("Cliente não cadastrado", "ID não encoontrado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+           
         }
     }
 }
