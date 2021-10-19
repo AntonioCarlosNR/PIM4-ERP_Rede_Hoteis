@@ -55,6 +55,16 @@ namespace PIM4.Modelo
                 this.Mensagem = login.Mensagem;
             }
         }
+        public bool apagar(int id)
+        {
+            Login login = new Login();
+            Existe = login.apagar(id);
+            if (!login.Mensagem.Equals(""))
+            {
+                this.Mensagem = login.Mensagem;
+            }
+            return Existe;
+        }
 
         //Agendamento de quarto
         public int getIdCliente(string nome)

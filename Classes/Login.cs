@@ -114,5 +114,29 @@ namespace PIM4.Classes
                 this.Mensagem = "Erro com o Banco de dados!!";
             }
         }
+        public bool apagar(int id)
+        {
+            //comandos SQL se existem no BD 
+            cmd.CommandText = "delete from TB_Cliente where ID_Cliente = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                //ExecuteReader() usado quando tem retorno tipo select
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    Existe = true;
+                }
+                con.desconection();
+                dr.Close();
+            }
+            catch (SqlException)
+            {
+                this.Mensagem = "Erro com o Banco de dados!!";
+            }
+            return Existe;
+        }
     }
 }
