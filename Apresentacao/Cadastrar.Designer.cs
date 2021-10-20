@@ -48,13 +48,16 @@ namespace PIM4.Apresentacao
             this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnApagar = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.rdbCliente = new System.Windows.Forms.RadioButton();
+            this.rdbUsuario = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLogin.Location = new System.Drawing.Point(51, 155);
+            this.lblLogin.Location = new System.Drawing.Point(50, 165);
             this.lblLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(115, 21);
@@ -65,7 +68,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSenha.Location = new System.Drawing.Point(131, 215);
+            this.lblSenha.Location = new System.Drawing.Point(130, 225);
             this.lblSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(57, 21);
@@ -76,7 +79,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTelefone.Location = new System.Drawing.Point(104, 316);
+            this.lblTelefone.Location = new System.Drawing.Point(103, 326);
             this.lblTelefone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(76, 21);
@@ -85,7 +88,8 @@ namespace PIM4.Apresentacao
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(217, 155);
+            this.txtLogin.Enabled = false;
+            this.txtLogin.Location = new System.Drawing.Point(216, 165);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(443, 28);
@@ -93,7 +97,8 @@ namespace PIM4.Apresentacao
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(217, 213);
+            this.txtSenha.Enabled = false;
+            this.txtSenha.Location = new System.Drawing.Point(216, 223);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(443, 28);
@@ -101,7 +106,8 @@ namespace PIM4.Apresentacao
             // 
             // txtFone
             // 
-            this.txtFone.Location = new System.Drawing.Point(217, 314);
+            this.txtFone.Enabled = false;
+            this.txtFone.Location = new System.Drawing.Point(216, 324);
             this.txtFone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFone.Name = "txtFone";
             this.txtFone.Size = new System.Drawing.Size(170, 28);
@@ -109,7 +115,8 @@ namespace PIM4.Apresentacao
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(477, 314);
+            this.txtCpf.Enabled = false;
+            this.txtCpf.Location = new System.Drawing.Point(476, 324);
             this.txtCpf.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(183, 28);
@@ -119,7 +126,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblCpf.AutoSize = true;
             this.lblCpf.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCpf.Location = new System.Drawing.Point(407, 314);
+            this.lblCpf.Location = new System.Drawing.Point(406, 324);
             this.lblCpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(45, 21);
@@ -128,10 +135,10 @@ namespace PIM4.Apresentacao
             // 
             // btnCadastrese
             // 
-            this.btnCadastrese.Location = new System.Drawing.Point(217, 362);
+            this.btnCadastrese.Location = new System.Drawing.Point(216, 372);
             this.btnCadastrese.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCadastrese.Name = "btnCadastrese";
-            this.btnCadastrese.Size = new System.Drawing.Size(192, 42);
+            this.btnCadastrese.Size = new System.Drawing.Size(127, 42);
             this.btnCadastrese.TabIndex = 8;
             this.btnCadastrese.Text = "Cadastre-se";
             this.btnCadastrese.UseVisualStyleBackColor = true;
@@ -141,7 +148,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNome.Location = new System.Drawing.Point(129, 57);
+            this.lblNome.Location = new System.Drawing.Point(128, 67);
             this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(58, 21);
@@ -150,7 +157,8 @@ namespace PIM4.Apresentacao
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(217, 55);
+            this.txtNome.Enabled = false;
+            this.txtNome.Location = new System.Drawing.Point(216, 65);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(443, 28);
@@ -158,7 +166,8 @@ namespace PIM4.Apresentacao
             // 
             // txtConfSenha
             // 
-            this.txtConfSenha.Location = new System.Drawing.Point(217, 265);
+            this.txtConfSenha.Enabled = false;
+            this.txtConfSenha.Location = new System.Drawing.Point(216, 275);
             this.txtConfSenha.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtConfSenha.Name = "txtConfSenha";
             this.txtConfSenha.Size = new System.Drawing.Size(443, 28);
@@ -169,7 +178,7 @@ namespace PIM4.Apresentacao
             this.lblConfSenha.AutoEllipsis = true;
             this.lblConfSenha.AutoSize = true;
             this.lblConfSenha.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblConfSenha.Location = new System.Drawing.Point(19, 265);
+            this.lblConfSenha.Location = new System.Drawing.Point(18, 275);
             this.lblConfSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblConfSenha.Name = "lblConfSenha";
             this.lblConfSenha.Size = new System.Drawing.Size(138, 21);
@@ -180,7 +189,7 @@ namespace PIM4.Apresentacao
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEndereco.Location = new System.Drawing.Point(96, 107);
+            this.lblEndereco.Location = new System.Drawing.Point(95, 117);
             this.lblEndereco.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(82, 21);
@@ -189,7 +198,8 @@ namespace PIM4.Apresentacao
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(217, 105);
+            this.txtEndereco.Enabled = false;
+            this.txtEndereco.Location = new System.Drawing.Point(216, 115);
             this.txtEndereco.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(443, 28);
@@ -208,6 +218,7 @@ namespace PIM4.Apresentacao
             // 
             // txtIdCliente
             // 
+            this.txtIdCliente.Enabled = false;
             this.txtIdCliente.Location = new System.Drawing.Point(217, 10);
             this.txtIdCliente.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtIdCliente.Name = "txtIdCliente";
@@ -228,20 +239,57 @@ namespace PIM4.Apresentacao
             // 
             // btnApagar
             // 
-            this.btnApagar.Location = new System.Drawing.Point(469, 362);
+            this.btnApagar.Location = new System.Drawing.Point(532, 372);
             this.btnApagar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(192, 42);
+            this.btnApagar.Size = new System.Drawing.Size(127, 42);
             this.btnApagar.TabIndex = 18;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
             this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Location = new System.Drawing.Point(374, 372);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(127, 42);
+            this.btnAtualizar.TabIndex = 19;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
+            // rdbCliente
+            // 
+            this.rdbCliente.AutoSize = true;
+            this.rdbCliente.Location = new System.Drawing.Point(476, 11);
+            this.rdbCliente.Name = "rdbCliente";
+            this.rdbCliente.Size = new System.Drawing.Size(93, 25);
+            this.rdbCliente.TabIndex = 20;
+            this.rdbCliente.TabStop = true;
+            this.rdbCliente.Text = "Cliente*";
+            this.rdbCliente.UseVisualStyleBackColor = true;
+            this.rdbCliente.CheckedChanged += new System.EventHandler(this.rdbCliente_CheckedChanged);
+            // 
+            // rdbUsuario
+            // 
+            this.rdbUsuario.AutoSize = true;
+            this.rdbUsuario.Location = new System.Drawing.Point(567, 11);
+            this.rdbUsuario.Name = "rdbUsuario";
+            this.rdbUsuario.Size = new System.Drawing.Size(100, 25);
+            this.rdbUsuario.TabIndex = 21;
+            this.rdbUsuario.TabStop = true;
+            this.rdbUsuario.Text = "Usuário*";
+            this.rdbUsuario.UseVisualStyleBackColor = true;
+            this.rdbUsuario.CheckedChanged += new System.EventHandler(this.rdbUsuario_CheckedChanged);
             // 
             // Cadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 450);
+            this.Controls.Add(this.rdbUsuario);
+            this.Controls.Add(this.rdbCliente);
+            this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtIdCliente);
@@ -292,5 +340,8 @@ namespace PIM4.Apresentacao
         private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.RadioButton rdbCliente;
+        private System.Windows.Forms.RadioButton rdbUsuario;
     }
 }

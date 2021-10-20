@@ -18,6 +18,7 @@ namespace PIM4.Modelo
         public string email;
         public decimal fone;
         public decimal doc;
+        public string senha;
         public bool acessar(string login, string senha)
         {
             Login login1 = new Login();
@@ -30,40 +31,52 @@ namespace PIM4.Modelo
         }
         
         //Cadastrar Usuario
-        public string cadastrar(string nome, string endereco,string email, string senha, string confsenha, long telefone, long cpf)
+        public string cadastrar(string nome, string endereco,string email, string senha, string confsenha, long telefone, long cpf, string tabela)
         {
             Login login1 = new Login();
-            this.Mensagem = login1.cadastrar(nome, endereco,email,senha,confsenha,telefone,cpf);
+            this.Mensagem = login1.cadastrar(nome, endereco,email,senha,confsenha,telefone,cpf,tabela);
             if (login1.Existe)
             {
                 this.Existe = true;
             }
             return Mensagem;
         }
-        public void IdCliente(int id_cli)
+        public void IdCliente(int id_cli, string tabela)
         {
             Login login = new Login();
-            login.buscaIdusuario(id_cli);
+            login.buscaIdusuario(id_cli, tabela);
             id_cliente = login.id ;
             nome = login.nome;
             endereco = login.endereco;
             email = login.email;
             fone = login.fone;
             doc = login.doc;
+            senha = login.senha;
             if (login.Mensagem.Equals(""))
             {
                 this.Mensagem = login.Mensagem;
             }
         }
-        public bool apagar(int id)
+        public bool apagar(int id, string tabela)
         {
             Login login = new Login();
-            Existe = login.apagar(id);
+            Existe = login.apagar(id, tabela);
             if (!login.Mensagem.Equals(""))
             {
                 this.Mensagem = login.Mensagem;
             }
             return Existe;
+        }
+
+        public string atualizar(string nome, string endereco, string email, string senha, string confsenha, long telefone, long cpf, int id, string tabela)
+        {
+            Login login = new Login();
+            this.Mensagem = login.atualizar(nome, endereco, email, senha, confsenha, telefone, cpf, id, tabela);
+            if (login.Existe)
+            {
+                this.Existe = true;
+            }
+            return Mensagem;
         }
 
         //Agendamento de quarto

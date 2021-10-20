@@ -20,6 +20,7 @@ namespace PIM4.Classes
         public string email;
         public decimal fone;
         public decimal doc;
+        public string senha;
 
         public bool verificarlogin(string login, string senha)
         {
@@ -47,14 +48,23 @@ namespace PIM4.Classes
             return Existe;
         }
 
-        public string cadastrar(string nome, string endereco,string email, string senha, string confsenha, long telefone, long cpf)
+        public string cadastrar(string nome, string endereco,string email, string senha, string confsenha, long telefone, long cpf, string tabela)
         {
             Existe = false;
 
             //comandos para inserir no banco 
             if (senha.Equals(confsenha))
             {
-                cmd.CommandText = "insert into TB_Cliente (Nm_Cliente,Ds_Endereco,Ds_email,Ds_Senha,Nm_telefone,Nm_Documento) values (@nome,@endereco,@email,@senha,@telefone,@cpf);";
+                switch (tabela)
+                {
+                    case "TB_Cliente":
+                        cmd.CommandText = "insert into TB_Cliente (Nm_Cliente,Ds_Endereco,Ds_email,Ds_Senha,Nm_telefone,Nm_Documento) values (@nome,@endereco,@email,@senha,@telefone,@cpf);";
+                        break;
+                    case "TB_Usuario":
+                        cmd.CommandText = "insert into TB_Usuario (Nm_Usuario,Ds_Endereco,Ds_email,Ds_Senha,Nm_telefone,Nm_Documento) values (@nome,@endereco,@email,@senha,@telefone,@cpf);";
+                        break;
+                } 
+                //cmd.CommandText = "insert into TB_Cliente (Nm_Cliente,Ds_Endereco,Ds_email,Ds_Senha,Nm_telefone,Nm_Documento) values (@nome,@endereco,@email,@senha,@telefone,@cpf);";
                 cmd.Parameters.AddWithValue("@nome",nome);
                 cmd.Parameters.AddWithValue("@endereco",endereco);
                 cmd.Parameters.AddWithValue("@email",email);
@@ -83,10 +93,18 @@ namespace PIM4.Classes
                 
             return Mensagem;
         }
-        public void buscaIdusuario(int id_cli)
+        public void buscaIdusuario(int id_cli, string tabela)
         {
+            switch (tabela)
+            {
+                case "TB_Cliente":
+                    cmd.CommandText = "select * from TB_Cliente where ID_Cliente = @id";
+                    break;
+                case "TB_Usuario":
+                    cmd.CommandText = "select * from TB_Usuario where ID_Usuario = @id";
+                    break;
+            }
             //comandos SQL se existem no BD 
-            cmd.CommandText = "select * from TB_Cliente where ID_Cliente = @id";
             cmd.Parameters.AddWithValue("@id", id_cli);
 
             try
@@ -104,6 +122,7 @@ namespace PIM4.Classes
                     email = dr.GetString(3);
                     fone = dr.GetDecimal(4);
                     doc = dr.GetDecimal(5);
+                    senha = dr.GetString(6);
 
                 }
                 con.desconection();
@@ -114,10 +133,18 @@ namespace PIM4.Classes
                 this.Mensagem = "Erro com o Banco de dados!!";
             }
         }
-        public bool apagar(int id)
+        public bool apagar(int id, string tabela)
         {
+            switch (tabela)
+            {
+                case "TB_Cliente":
+                    cmd.CommandText = "delete from TB_Cliente where ID_Cliente = @id";
+                    break;
+                case "TB_Usuario":
+                    cmd.CommandText = "delete from TB_Usuario where ID_Usuario = @id";
+                    break;
+            }
             //comandos SQL se existem no BD 
-            cmd.CommandText = "delete from TB_Cliente where ID_Cliente = @id";
             cmd.Parameters.AddWithValue("@id", id);
 
             try
@@ -137,6 +164,51 @@ namespace PIM4.Classes
                 this.Mensagem = "Erro com o Banco de dados!!";
             }
             return Existe;
+        }
+        public string atualizar(string nome, string endereco, string email, string senha, string confsenha, long telefone, long cpf, int id, string tabela)
+        {
+            Existe = false;
+
+            //comandos para inserir no banco 
+            if (senha.Equals(confsenha))
+            {
+                switch (tabela)
+                {
+                    case "TB_Cliente":
+                        cmd.CommandText = "update TB_Cliente set Nm_Cliente = @nome ,Ds_Endereco = @endereco ,Nm_telefone = @telefone ,Ds_email = @email ,Nm_Documento = @cpf, Ds_Senha = @senha where ID_Cliente = @id";
+                        break;
+                    case "TB_Usuario":
+                        cmd.CommandText = "update TB_Usuario set Nm_Usuario = @nome ,Ds_Endereco = @endereco ,Nm_telefone = @telefone ,Ds_email = @email ,Nm_Documento = @cpf, Ds_Senha = @senha where ID_Usuario = @id";
+                        break;
+                }
+                cmd.Parameters.AddWithValue("@nome", nome);
+                cmd.Parameters.AddWithValue("@endereco", endereco);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@senha", senha);
+                cmd.Parameters.AddWithValue("@telefone", telefone);
+                cmd.Parameters.AddWithValue("@cpf", cpf);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                try
+                {
+                    cmd.Connection = con.conectar();
+                    //ExecuteNonQuery() usado para quando se tem um insert
+                    cmd.ExecuteNonQuery();
+                    con.desconection();
+                    this.Mensagem = "Dados atualizados com sucesso!!!";
+                    Existe = true;
+                }
+                catch (SqlException)
+                {
+                    this.Mensagem = "Erro com banco de dados";
+                }
+            }
+            else
+            {
+                this.Mensagem = "Senhas não correspondentes";
+            }
+
+            return Mensagem;
         }
     }
 }
