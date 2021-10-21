@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PIM4.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,13 +10,14 @@ using System.Windows.Forms;
 
 namespace PIM4.Classes
 {
-    class Reserva
+    class Reserva: AbsPropriedades 
     {
         public bool Existe;
         public string Mensagem = "";
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
+
         public int id = 0;
 
         public int verificarUsuario(string nome)
@@ -72,6 +74,39 @@ namespace PIM4.Classes
             }
 
             return Mensagem;
+        }
+
+        public void buscaIdreserva(int id_reserva)
+        {
+            //comandos SQL se existem no BD 
+            cmd.CommandText = "select * from TB_Reserva where ID_Reserva = @id_reserva";
+            cmd.Parameters.AddWithValue("@id_reserva", id_reserva);
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                //ExecuteReader() usado quando tem retorno tipo select
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    Existe = true;
+                    dr.Read();
+                    
+                    nomeHospede = dr.GetString(1);
+                    qtdPessoas = dr.GetDecimal(2);
+                    valor = dr.GetDecimal(3);
+                    checkin = dr.GetDateTime(4);
+                    checkout = dr.GetDateTime(5);
+                    quarto = dr.GetDecimal(6);
+                    id = dr.GetInt32(7);
+                }
+                con.desconection();
+                dr.Close();
+            }
+            catch (SqlException)
+            {
+                this.Mensagem = "Erro com o Banco de dados!!";
+            }
         }
     }
 }

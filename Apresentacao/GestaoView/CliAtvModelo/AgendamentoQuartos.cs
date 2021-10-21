@@ -52,5 +52,20 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             }
            
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Controle controle = new Controle();
+            int id = Convert.ToInt32(txtIdReserva.Text);
+            controle.buscardados(id);
+
+            txtNomeHospede.Text = controle.nomeHospede;
+            txtQtdPessoas.Text = Convert.ToString(controle.qtdPessoas);
+            txtQuarto.Text = Convert.ToString(controle.quarto);
+            txtValor.Text = Convert.ToString(controle.valor);
+            txtId.Text = Convert.ToString(controle.id);
+            dtcheckin.Value = controle.checkin;
+            dtCheckout.Value = controle.checkout;
+        }
     }
 }

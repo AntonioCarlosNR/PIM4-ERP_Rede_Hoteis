@@ -44,13 +44,16 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.txtQuarto = new System.Windows.Forms.TextBox();
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblIdReserva = new System.Windows.Forms.Label();
+            this.txtIdReserva = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNomeHospede
             // 
             this.lblNomeHospede.AutoSize = true;
             this.lblNomeHospede.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNomeHospede.Location = new System.Drawing.Point(38, 53);
+            this.lblNomeHospede.Location = new System.Drawing.Point(47, 76);
             this.lblNomeHospede.Name = "lblNomeHospede";
             this.lblNomeHospede.Size = new System.Drawing.Size(155, 21);
             this.lblNomeHospede.TabIndex = 0;
@@ -59,7 +62,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             // txtNomeHospede
             // 
-            this.txtNomeHospede.Location = new System.Drawing.Point(199, 51);
+            this.txtNomeHospede.Location = new System.Drawing.Point(208, 74);
             this.txtNomeHospede.Name = "txtNomeHospede";
             this.txtNomeHospede.Size = new System.Drawing.Size(312, 27);
             this.txtNomeHospede.TabIndex = 1;
@@ -68,7 +71,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             this.lblQtdPessoas.AutoSize = true;
             this.lblQtdPessoas.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblQtdPessoas.Location = new System.Drawing.Point(7, 112);
+            this.lblQtdPessoas.Location = new System.Drawing.Point(16, 123);
             this.lblQtdPessoas.Name = "lblQtdPessoas";
             this.lblQtdPessoas.Size = new System.Drawing.Size(186, 21);
             this.lblQtdPessoas.TabIndex = 2;
@@ -76,14 +79,14 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             // txtQtdPessoas
             // 
-            this.txtQtdPessoas.Location = new System.Drawing.Point(199, 112);
+            this.txtQtdPessoas.Location = new System.Drawing.Point(208, 123);
             this.txtQtdPessoas.Name = "txtQtdPessoas";
             this.txtQtdPessoas.Size = new System.Drawing.Size(65, 27);
             this.txtQtdPessoas.TabIndex = 3;
             // 
             // dtcheckin
             // 
-            this.dtcheckin.Location = new System.Drawing.Point(199, 205);
+            this.dtcheckin.Location = new System.Drawing.Point(208, 216);
             this.dtcheckin.Name = "dtcheckin";
             this.dtcheckin.Size = new System.Drawing.Size(312, 27);
             this.dtcheckin.TabIndex = 4;
@@ -92,7 +95,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(118, 205);
+            this.label2.Location = new System.Drawing.Point(127, 216);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 21);
             this.label2.TabIndex = 5;
@@ -100,7 +103,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             // dtCheckout
             // 
-            this.dtCheckout.Location = new System.Drawing.Point(199, 259);
+            this.dtCheckout.Location = new System.Drawing.Point(208, 270);
             this.dtCheckout.Name = "dtCheckout";
             this.dtCheckout.Size = new System.Drawing.Size(312, 27);
             this.dtCheckout.TabIndex = 6;
@@ -109,7 +112,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             this.lblChechOut.AutoSize = true;
             this.lblChechOut.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblChechOut.Location = new System.Drawing.Point(106, 259);
+            this.lblChechOut.Location = new System.Drawing.Point(115, 270);
             this.lblChechOut.Name = "lblChechOut";
             this.lblChechOut.Size = new System.Drawing.Size(87, 21);
             this.lblChechOut.TabIndex = 7;
@@ -118,7 +121,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // btnAgendarQuarto
             // 
             this.btnAgendarQuarto.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgendarQuarto.Location = new System.Drawing.Point(199, 302);
+            this.btnAgendarQuarto.Location = new System.Drawing.Point(208, 313);
             this.btnAgendarQuarto.Name = "btnAgendarQuarto";
             this.btnAgendarQuarto.Size = new System.Drawing.Size(312, 29);
             this.btnAgendarQuarto.TabIndex = 8;
@@ -130,7 +133,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             this.lblValorPagar.AutoSize = true;
             this.lblValorPagar.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblValorPagar.Location = new System.Drawing.Point(140, 162);
+            this.lblValorPagar.Location = new System.Drawing.Point(149, 173);
             this.lblValorPagar.Name = "lblValorPagar";
             this.lblValorPagar.Size = new System.Drawing.Size(53, 21);
             this.lblValorPagar.TabIndex = 9;
@@ -138,7 +141,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(199, 160);
+            this.txtValor.Location = new System.Drawing.Point(208, 171);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(164, 27);
             this.txtValor.TabIndex = 10;
@@ -147,7 +150,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             this.lblQuarto.AutoSize = true;
             this.lblQuarto.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblQuarto.Location = new System.Drawing.Point(270, 112);
+            this.lblQuarto.Location = new System.Drawing.Point(279, 123);
             this.lblQuarto.Name = "lblQuarto";
             this.lblQuarto.Size = new System.Drawing.Size(158, 21);
             this.lblQuarto.TabIndex = 11;
@@ -155,7 +158,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             // txtQuarto
             // 
-            this.txtQuarto.Location = new System.Drawing.Point(434, 110);
+            this.txtQuarto.Location = new System.Drawing.Point(443, 121);
             this.txtQuarto.Name = "txtQuarto";
             this.txtQuarto.Size = new System.Drawing.Size(77, 27);
             this.txtQuarto.TabIndex = 12;
@@ -164,7 +167,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             this.lblIdCliente.AutoSize = true;
             this.lblIdCliente.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblIdCliente.Location = new System.Drawing.Point(399, 162);
+            this.lblIdCliente.Location = new System.Drawing.Point(405, 171);
             this.lblIdCliente.Name = "lblIdCliente";
             this.lblIdCliente.Size = new System.Drawing.Size(32, 21);
             this.lblIdCliente.TabIndex = 13;
@@ -172,16 +175,47 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(437, 160);
+            this.txtId.Location = new System.Drawing.Point(443, 171);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(74, 27);
+            this.txtId.Size = new System.Drawing.Size(77, 27);
             this.txtId.TabIndex = 14;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBuscar.Location = new System.Drawing.Point(291, 25);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(98, 29);
+            this.btnBuscar.TabIndex = 15;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // lblIdReserva
+            // 
+            this.lblIdReserva.AutoSize = true;
+            this.lblIdReserva.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIdReserva.Location = new System.Drawing.Point(105, 27);
+            this.lblIdReserva.Name = "lblIdReserva";
+            this.lblIdReserva.Size = new System.Drawing.Size(97, 21);
+            this.lblIdReserva.TabIndex = 16;
+            this.lblIdReserva.Text = "ID Reserva";
+            // 
+            // txtIdReserva
+            // 
+            this.txtIdReserva.Location = new System.Drawing.Point(208, 27);
+            this.txtIdReserva.Name = "txtIdReserva";
+            this.txtIdReserva.Size = new System.Drawing.Size(77, 27);
+            this.txtIdReserva.TabIndex = 17;
             // 
             // AgendamentoQuartos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 379);
+            this.Controls.Add(this.txtIdReserva);
+            this.Controls.Add(this.lblIdReserva);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblIdCliente);
             this.Controls.Add(this.txtQuarto);
@@ -222,5 +256,8 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
         private System.Windows.Forms.TextBox txtQuarto;
         private System.Windows.Forms.Label lblIdCliente;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblIdReserva;
+        private System.Windows.Forms.TextBox txtIdReserva;
     }
 }

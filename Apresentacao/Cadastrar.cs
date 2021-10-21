@@ -148,6 +148,10 @@ namespace PIM4.Apresentacao
             txtConfSenha.Enabled = enable;
             txtIdCliente.Enabled = enable;
             txtFone.Enabled = enable;
+            btnApagar.Enabled = enable;
+            btnAtualizar.Enabled = enable;
+            btnBuscar.Enabled = enable;
+            btnCadastrese.Enabled = enable;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PIM4.Modelo
 {
-    public class Controle
+    public class Controle: AbsPropriedades
     {
         public bool Existe;
         public int id;
@@ -19,6 +19,7 @@ namespace PIM4.Modelo
         public decimal fone;
         public decimal doc;
         public string senha;
+        
         public bool acessar(string login, string senha)
         {
             Login login1 = new Login();
@@ -100,6 +101,24 @@ namespace PIM4.Modelo
             }
 
             return Mensagem;
+        }
+
+        public void buscardados(int id_reserva)
+        {
+            Reserva reserva = new Reserva();
+            reserva.buscaIdreserva(id_reserva);
+            
+            nomeHospede = reserva.nomeHospede;
+            qtdPessoas = reserva.qtdPessoas;
+            quarto = reserva.quarto;
+            valor = reserva.valor;
+            id = reserva.id;
+            checkin = reserva.checkin;
+            checkout = reserva.checkout;
+            if (reserva.Mensagem.Equals(""))
+            {
+                this.Mensagem = reserva.Mensagem;
+            }
         }
 
     }

@@ -135,6 +135,7 @@ namespace PIM4.Apresentacao
             // 
             // btnCadastrese
             // 
+            this.btnCadastrese.Enabled = false;
             this.btnCadastrese.Location = new System.Drawing.Point(216, 372);
             this.btnCadastrese.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCadastrese.Name = "btnCadastrese";
@@ -227,6 +228,7 @@ namespace PIM4.Apresentacao
             // 
             // btnBuscar
             // 
+            this.btnBuscar.Enabled = false;
             this.btnBuscar.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnBuscar.Location = new System.Drawing.Point(340, 8);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -239,6 +241,7 @@ namespace PIM4.Apresentacao
             // 
             // btnApagar
             // 
+            this.btnApagar.Enabled = false;
             this.btnApagar.Location = new System.Drawing.Point(532, 372);
             this.btnApagar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnApagar.Name = "btnApagar";
@@ -250,6 +253,7 @@ namespace PIM4.Apresentacao
             // 
             // btnAtualizar
             // 
+            this.btnAtualizar.Enabled = false;
             this.btnAtualizar.Location = new System.Drawing.Point(374, 372);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(127, 42);
@@ -265,7 +269,6 @@ namespace PIM4.Apresentacao
             this.rdbCliente.Name = "rdbCliente";
             this.rdbCliente.Size = new System.Drawing.Size(93, 25);
             this.rdbCliente.TabIndex = 20;
-            this.rdbCliente.TabStop = true;
             this.rdbCliente.Text = "Cliente*";
             this.rdbCliente.UseVisualStyleBackColor = true;
             this.rdbCliente.CheckedChanged += new System.EventHandler(this.rdbCliente_CheckedChanged);
@@ -277,7 +280,6 @@ namespace PIM4.Apresentacao
             this.rdbUsuario.Name = "rdbUsuario";
             this.rdbUsuario.Size = new System.Drawing.Size(100, 25);
             this.rdbUsuario.TabIndex = 21;
-            this.rdbUsuario.TabStop = true;
             this.rdbUsuario.Text = "Usuário*";
             this.rdbUsuario.UseVisualStyleBackColor = true;
             this.rdbUsuario.CheckedChanged += new System.EventHandler(this.rdbUsuario_CheckedChanged);
