@@ -12,11 +12,11 @@ namespace PIM4.Classes
 {
     class Reserva: AbsPropriedades 
     {
-        public bool Existe;
-        public string Mensagem = "";
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
+        public bool Existe;
+        public string Mensagem = "";
 
         public int id = 0;
 
@@ -107,6 +107,61 @@ namespace PIM4.Classes
             {
                 this.Mensagem = "Erro com o Banco de dados!!";
             }
+        }
+        public bool apagar(int id)
+        {
+            //comandos SQL se existem no BD 
+            cmd.CommandText = "delete from TB_Reserva where ID_Reserva = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                //ExecuteReader() usado quando tem retorno tipo select
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    Existe = true;
+                }
+                con.desconection();
+                this.Mensagem = "Excluido com sucesso!!!";
+                dr.Close();
+            }
+            catch (SqlException)
+            {
+                this.Mensagem = "Erro com o Banco de dados!!";
+            }
+            return Existe;
+        }
+        public string atualizar(string nome, int qtd, double valor, string checkin, string checkout, int quarto, int id, int id_reserva)
+        {
+            //Existe = false;
+
+            cmd.CommandText = "update TB_Reserva set Nm_Cliente = @nome, Qt_QuantidadeHospede = @qtd, Vl_Total = @valor,Ck_CheckIn = @checkin, Ck_Checkout = @checkout, Nm_Quarto = @quarto, ID_Cliente = @id where ID_Reserva = @id_reserva;";
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@qtd", qtd);
+            cmd.Parameters.AddWithValue("@valor", valor);
+            cmd.Parameters.AddWithValue("@checkin", checkin);
+            cmd.Parameters.AddWithValue("@checkout", checkout);
+            cmd.Parameters.AddWithValue("@quarto", quarto);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@id_reserva", id_reserva);
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                //ExecuteNonQuery() usado para quando se tem um insert
+                cmd.ExecuteNonQuery();
+                con.desconection();
+                this.Mensagem = "Atualizado com sucesso!!!";
+                Existe = true;
+            }
+            catch (SqlException)
+            {
+                this.Mensagem = "Erro com banco de dados";
+            }
+
+            return Mensagem;
         }
     }
 }

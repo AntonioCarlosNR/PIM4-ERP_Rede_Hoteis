@@ -47,6 +47,8 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblIdReserva = new System.Windows.Forms.Label();
             this.txtIdReserva = new System.Windows.Forms.TextBox();
+            this.btnApagar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblNomeHospede
@@ -123,7 +125,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.btnAgendarQuarto.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAgendarQuarto.Location = new System.Drawing.Point(208, 313);
             this.btnAgendarQuarto.Name = "btnAgendarQuarto";
-            this.btnAgendarQuarto.Size = new System.Drawing.Size(312, 29);
+            this.btnAgendarQuarto.Size = new System.Drawing.Size(112, 54);
             this.btnAgendarQuarto.TabIndex = 8;
             this.btnAgendarQuarto.Text = "Agendar Quarto";
             this.btnAgendarQuarto.UseVisualStyleBackColor = true;
@@ -208,11 +210,35 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.txtIdReserva.Size = new System.Drawing.Size(77, 27);
             this.txtIdReserva.TabIndex = 17;
             // 
+            // btnApagar
+            // 
+            this.btnApagar.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnApagar.Location = new System.Drawing.Point(326, 313);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(94, 54);
+            this.btnApagar.TabIndex = 18;
+            this.btnApagar.Text = "Apagar";
+            this.btnApagar.UseVisualStyleBackColor = true;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEditar.Location = new System.Drawing.Point(426, 313);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(94, 54);
+            this.btnEditar.TabIndex = 19;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // AgendamentoQuartos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 379);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnApagar);
             this.Controls.Add(this.txtIdReserva);
             this.Controls.Add(this.lblIdReserva);
             this.Controls.Add(this.btnBuscar);
@@ -259,5 +285,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblIdReserva;
         private System.Windows.Forms.TextBox txtIdReserva;
+        private System.Windows.Forms.Button btnApagar;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

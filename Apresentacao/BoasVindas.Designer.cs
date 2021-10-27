@@ -34,9 +34,6 @@ namespace PIM4.Apresentacao
             this.btnCliAtv = new System.Windows.Forms.Button();
             this.btnAdm = new System.Windows.Forms.Button();
             this.btnFinanceiro = new System.Windows.Forms.Button();
-            this.lblInfra = new System.Windows.Forms.Label();
-            this.btnControleMat = new System.Windows.Forms.Button();
-            this.btnAlertaRecurso = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,19 +49,19 @@ namespace PIM4.Apresentacao
             // lblGestao
             // 
             this.lblGestao.AutoSize = true;
-            this.lblGestao.Font = new System.Drawing.Font("Calisto MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGestao.Location = new System.Drawing.Point(355, 61);
+            this.lblGestao.Font = new System.Drawing.Font("Calisto MT", 20.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblGestao.Location = new System.Drawing.Point(334, 92);
             this.lblGestao.Name = "lblGestao";
-            this.lblGestao.Size = new System.Drawing.Size(105, 32);
+            this.lblGestao.Size = new System.Drawing.Size(128, 39);
             this.lblGestao.TabIndex = 1;
             this.lblGestao.Text = "Gestão ";
             // 
             // btnCliAtv
             // 
             this.btnCliAtv.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCliAtv.Location = new System.Drawing.Point(86, 135);
+            this.btnCliAtv.Location = new System.Drawing.Point(73, 196);
             this.btnCliAtv.Name = "btnCliAtv";
-            this.btnCliAtv.Size = new System.Drawing.Size(175, 57);
+            this.btnCliAtv.Size = new System.Drawing.Size(175, 111);
             this.btnCliAtv.TabIndex = 2;
             this.btnCliAtv.Text = "Clientes/Atividades";
             this.btnCliAtv.UseVisualStyleBackColor = true;
@@ -73,61 +70,29 @@ namespace PIM4.Apresentacao
             // btnAdm
             // 
             this.btnAdm.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdm.Location = new System.Drawing.Point(339, 135);
+            this.btnAdm.Location = new System.Drawing.Point(312, 196);
             this.btnAdm.Name = "btnAdm";
-            this.btnAdm.Size = new System.Drawing.Size(141, 57);
+            this.btnAdm.Size = new System.Drawing.Size(170, 111);
             this.btnAdm.TabIndex = 3;
             this.btnAdm.Text = "Administrativo";
             this.btnAdm.UseVisualStyleBackColor = true;
+            this.btnAdm.Click += new System.EventHandler(this.btnAdm_Click);
             // 
             // btnFinanceiro
             // 
             this.btnFinanceiro.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFinanceiro.Location = new System.Drawing.Point(555, 135);
+            this.btnFinanceiro.Location = new System.Drawing.Point(544, 196);
             this.btnFinanceiro.Name = "btnFinanceiro";
-            this.btnFinanceiro.Size = new System.Drawing.Size(148, 55);
+            this.btnFinanceiro.Size = new System.Drawing.Size(179, 111);
             this.btnFinanceiro.TabIndex = 4;
             this.btnFinanceiro.Text = "Financeiro";
             this.btnFinanceiro.UseVisualStyleBackColor = true;
-            // 
-            // lblInfra
-            // 
-            this.lblInfra.AutoSize = true;
-            this.lblInfra.Font = new System.Drawing.Font("Calisto MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblInfra.Location = new System.Drawing.Point(323, 243);
-            this.lblInfra.Name = "lblInfra";
-            this.lblInfra.Size = new System.Drawing.Size(175, 32);
-            this.lblInfra.TabIndex = 5;
-            this.lblInfra.Text = "Infraestrutura";
-            // 
-            // btnControleMat
-            // 
-            this.btnControleMat.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnControleMat.Location = new System.Drawing.Point(86, 307);
-            this.btnControleMat.Name = "btnControleMat";
-            this.btnControleMat.Size = new System.Drawing.Size(175, 69);
-            this.btnControleMat.TabIndex = 6;
-            this.btnControleMat.Text = "Controle de entrada e saída de materiais";
-            this.btnControleMat.UseVisualStyleBackColor = true;
-            // 
-            // btnAlertaRecurso
-            // 
-            this.btnAlertaRecurso.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAlertaRecurso.Location = new System.Drawing.Point(339, 307);
-            this.btnAlertaRecurso.Name = "btnAlertaRecurso";
-            this.btnAlertaRecurso.Size = new System.Drawing.Size(141, 69);
-            this.btnAlertaRecurso.TabIndex = 7;
-            this.btnAlertaRecurso.Text = "Alerta de falta de recurso";
-            this.btnAlertaRecurso.UseVisualStyleBackColor = true;
             // 
             // BoasVindas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAlertaRecurso);
-            this.Controls.Add(this.btnControleMat);
-            this.Controls.Add(this.lblInfra);
             this.Controls.Add(this.btnFinanceiro);
             this.Controls.Add(this.btnAdm);
             this.Controls.Add(this.btnCliAtv);
@@ -136,6 +101,7 @@ namespace PIM4.Apresentacao
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "BoasVindas";
             this.Text = "BoasVindas";
+            this.Load += new System.EventHandler(this.BoasVindas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,8 +114,5 @@ namespace PIM4.Apresentacao
         private System.Windows.Forms.Button btnCliAtv;
         private System.Windows.Forms.Button btnAdm;
         private System.Windows.Forms.Button btnFinanceiro;
-        private System.Windows.Forms.Label lblInfra;
-        private System.Windows.Forms.Button btnControleMat;
-        private System.Windows.Forms.Button btnAlertaRecurso;
     }
 }

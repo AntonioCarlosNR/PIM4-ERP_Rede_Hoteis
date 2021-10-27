@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PIM4.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PIM4.Classes
 {
-    class Login
+    class Login: AbsPropriedades
     {
         public bool Existe;
         public string Mensagem = "";
@@ -15,17 +16,11 @@ namespace PIM4.Classes
         Conexao con = new Conexao();
         SqlDataReader dr;
         public int id;
-        public string nome;
-        public string endereco;
-        public string email;
-        public decimal fone;
-        public decimal doc;
-        public string senha;
 
         public bool verificarlogin(string login, string senha)
         {
             //comandos SQL se existem no BD 
-            cmd.CommandText = "select * from TB_Cliente where Ds_email = @login and Ds_Senha =@senha";
+            cmd.CommandText = "select * from TB_Usuario where Ds_email = @login and Ds_Senha =@senha";
             cmd.Parameters.AddWithValue("@login",login);
             cmd.Parameters.AddWithValue("@senha", senha);
 

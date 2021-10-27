@@ -10,16 +10,13 @@ namespace PIM4.Modelo
     public class Controle: AbsPropriedades
     {
         public bool Existe;
+        public string Mensagem = "";
         public int id;
-        public string Mensagem ="";
-        public int id_cliente;
-        public string nome;
-        public string endereco;
-        public string email;
-        public decimal fone;
-        public decimal doc;
-        public string senha;
-        
+
+        public Controle()
+        {
+        }
+
         public bool acessar(string login, string senha)
         {
             Login login1 = new Login();
@@ -119,6 +116,78 @@ namespace PIM4.Modelo
             {
                 this.Mensagem = reserva.Mensagem;
             }
+        }
+        public bool apagar(int id)
+        {
+            Reserva reserva = new Reserva();
+            Existe = reserva.apagar(id);
+            if (!reserva.Mensagem.Equals(""))
+            {
+                this.Mensagem = reserva.Mensagem;
+            }
+            return Existe;
+        }
+
+        public string atualizarReserva(string nome, int qtd, double valor, string checkin, string checkout, int quarto, int id, int id_reserva)
+        {
+            Reserva reserva = new Reserva();
+            this.Mensagem = reserva.atualizar(nome, qtd, valor, checkin, checkout, quarto, id, id_reserva);
+            if (reserva.Existe)
+            {
+                this.Existe = true;
+            }
+            return Mensagem;
+        }
+
+        //CheckIn CheckOut
+        private AbsPropriedades AbsProp;
+
+        public Controle(int id_res) : base(id_res) { }
+        public Controle(int id_res, string checkin_str) : base(id_res, checkin_str) { }
+        public override void Buscar()
+        {
+            AbsProp = new Checks(this.id_res);
+            if (AbsProp.Existe)
+            {
+                AbsProp.Mensagem = "Reserva existente favor realizar o ChekIn";
+            }
+            else
+            {
+                AbsProp.Mensagem = "Dados da Reserva não encontrados";
+            }
+
+            this.Mensagem = AbsProp.Mensagem;
+        }
+
+        public override void Inserir()
+        {
+            AbsProp = new Checks(id_res, checkin_str);
+
+            if (AbsProp.Existe)
+            {
+                AbsProp.Mensagem = "ChekIn realizado com sucesso";
+            }
+            else
+            {
+                AbsProp.Mensagem = "Não foi possivel realizar o checkin";
+            }
+
+            this.Mensagem = AbsProp.Mensagem;
+        }
+        public override void Atualizar()
+        {
+            AbsProp = new Checks(id_res, checkout_str);
+
+            if (AbsProp.Existe)
+            {
+                AbsProp.Mensagem = "ChekOut realizado com sucesso";
+            }
+            else
+            {
+                AbsProp.Mensagem = "Não foi possivel realizar o checkOut";
+            }
+
+            this.Mensagem = AbsProp.Mensagem;
         }
 
     }

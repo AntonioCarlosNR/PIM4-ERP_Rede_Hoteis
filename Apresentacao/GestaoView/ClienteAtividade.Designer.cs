@@ -31,59 +31,35 @@ namespace PIM4.Apresentacao.GestaoView
         {
             this.btnCadastroCli = new System.Windows.Forms.Button();
             this.btnAgendaQuartos = new System.Windows.Forms.Button();
-            this.btnAngedarAtv = new System.Windows.Forms.Button();
-            this.btnControleVagas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCadastroCli
             // 
             this.btnCadastroCli.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCadastroCli.Location = new System.Drawing.Point(57, 78);
+            this.btnCadastroCli.Location = new System.Drawing.Point(52, 91);
             this.btnCadastroCli.Name = "btnCadastroCli";
-            this.btnCadastroCli.Size = new System.Drawing.Size(160, 71);
+            this.btnCadastroCli.Size = new System.Drawing.Size(160, 142);
             this.btnCadastroCli.TabIndex = 0;
-            this.btnCadastroCli.Text = "Cadastro de Cliente";
+            this.btnCadastroCli.Text = "Cadastro de Cliente/Usuário";
             this.btnCadastroCli.UseVisualStyleBackColor = true;
             this.btnCadastroCli.Click += new System.EventHandler(this.btnCadastroCli_Click);
             // 
             // btnAgendaQuartos
             // 
             this.btnAgendaQuartos.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgendaQuartos.Location = new System.Drawing.Point(257, 78);
+            this.btnAgendaQuartos.Location = new System.Drawing.Point(257, 91);
             this.btnAgendaQuartos.Name = "btnAgendaQuartos";
-            this.btnAgendaQuartos.Size = new System.Drawing.Size(151, 70);
+            this.btnAgendaQuartos.Size = new System.Drawing.Size(151, 142);
             this.btnAgendaQuartos.TabIndex = 1;
             this.btnAgendaQuartos.Text = "Agendamento de Quartos";
             this.btnAgendaQuartos.UseVisualStyleBackColor = true;
             this.btnAgendaQuartos.Click += new System.EventHandler(this.btnAgendaQuartos_Click);
             // 
-            // btnAngedarAtv
-            // 
-            this.btnAngedarAtv.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAngedarAtv.Location = new System.Drawing.Point(57, 196);
-            this.btnAngedarAtv.Name = "btnAngedarAtv";
-            this.btnAngedarAtv.Size = new System.Drawing.Size(160, 77);
-            this.btnAngedarAtv.TabIndex = 2;
-            this.btnAngedarAtv.Text = "Agendamento de Atividade";
-            this.btnAngedarAtv.UseVisualStyleBackColor = true;
-            // 
-            // btnControleVagas
-            // 
-            this.btnControleVagas.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnControleVagas.Location = new System.Drawing.Point(257, 196);
-            this.btnControleVagas.Name = "btnControleVagas";
-            this.btnControleVagas.Size = new System.Drawing.Size(151, 76);
-            this.btnControleVagas.TabIndex = 3;
-            this.btnControleVagas.Text = "Controle de Vagas";
-            this.btnControleVagas.UseVisualStyleBackColor = true;
-            // 
             // ClienteAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 342);
-            this.Controls.Add(this.btnControleVagas);
-            this.Controls.Add(this.btnAngedarAtv);
+            this.ClientSize = new System.Drawing.Size(476, 325);
             this.Controls.Add(this.btnAgendaQuartos);
             this.Controls.Add(this.btnCadastroCli);
             this.Name = "ClienteAtividade";
@@ -96,7 +72,5 @@ namespace PIM4.Apresentacao.GestaoView
 
         private System.Windows.Forms.Button btnCadastroCli;
         private System.Windows.Forms.Button btnAgendaQuartos;
-        private System.Windows.Forms.Button btnAngedarAtv;
-        private System.Windows.Forms.Button btnControleVagas;
     }
 }

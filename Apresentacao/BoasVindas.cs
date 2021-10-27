@@ -23,5 +23,18 @@ namespace PIM4.Apresentacao
             ClienteAtividade cliatv = new ClienteAtividade();
             cliatv.Show();
         }
+        private void btnAdm_Click(object sender, EventArgs e)
+        {
+            Administrativo adm = new Administrativo();
+            adm.Show();
+
+        }
+
+        private void BoasVindas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }
