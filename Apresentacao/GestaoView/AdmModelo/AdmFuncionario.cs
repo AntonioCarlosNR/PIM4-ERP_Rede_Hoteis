@@ -33,11 +33,11 @@ namespace PIM4.Apresentacao.GestaoView.AdmModelo
             //define o tipo do comando
             cmd.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable clientes = new DataTable();
+            DataTable reservas = new DataTable();
 
-            da.Fill(clientes);
+            da.Fill(reservas);
 
-            dataGridViewAdm.DataSource = clientes;
+            dataGridViewAdm.DataSource = reservas;
         }
     }
 }
