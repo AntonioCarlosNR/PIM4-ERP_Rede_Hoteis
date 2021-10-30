@@ -72,7 +72,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
         {
             Controle controle = new Controle();
             controle.apagar(Convert.ToInt32(txtIdReserva.Text));
-            if (!controle.Existe.Equals(""))
+            if (controle.Existe == true)
             {
                 MessageBox.Show("Registro apagado com sucesso!!", "Excluido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtIdReserva.Clear();

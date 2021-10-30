@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +30,12 @@ namespace PIM4.Modelo
         public DateTime checkout { get; set; }
         public string checkin_str { get; set; }
         public string checkout_str { get; set; }
+        public string statusReserva { get; set; }
+        //AdmFunc 
+     
         protected AbsPropriedades()
         {
+            this.Buscar();
         }
 
         //construtor e metodo para iniciar em tela de chekin/out
@@ -42,7 +48,7 @@ namespace PIM4.Modelo
         protected AbsPropriedades(int id_res, string checkin_str)
         {
             this.id_res = id_res;
-            if (this.checkin_str == "in")
+            if (checkin_str == "in")
             {
                 this.checkin_str = checkin_str;
                 this.Inserir();        

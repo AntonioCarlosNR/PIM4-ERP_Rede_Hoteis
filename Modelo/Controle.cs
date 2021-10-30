@@ -9,19 +9,22 @@ namespace PIM4.Modelo
 {
     public class Controle: AbsPropriedades
     {
-        public bool Existe;
-        public string Mensagem = "";
+        //public bool Existe;
+        //public string Mensagem = "";
         public int id;
 
+        private AbsPropriedades AbsProp;
         public Controle()
         {
+            this.Mensagem = "";
         }
 
         public bool acessar(string login, string senha)
         {
+            this.Mensagem = ""; 
             Login login1 = new Login();
             Existe = login1.verificarlogin(login,senha);
-            if (!login1.Mensagem.Equals(""))
+            if (!Mensagem.Equals(""))
             {
                 this.Mensagem = login1.Mensagem;
             }
@@ -41,6 +44,7 @@ namespace PIM4.Modelo
         }
         public void IdCliente(int id_cli, string tabela)
         {
+
             Login login = new Login();
             login.buscaIdusuario(id_cli, tabela);
             id_cliente = login.id ;
@@ -50,16 +54,17 @@ namespace PIM4.Modelo
             fone = login.fone;
             doc = login.doc;
             senha = login.senha;
-            if (login.Mensagem.Equals(""))
+            if (Mensagem.Equals(""))
             {
                 this.Mensagem = login.Mensagem;
             }
         }
         public bool apagar(int id, string tabela)
         {
+            this.Mensagem = "";
             Login login = new Login();
             Existe = login.apagar(id, tabela);
-            if (!login.Mensagem.Equals(""))
+            if (!Mensagem.Equals(""))
             {
                 this.Mensagem = login.Mensagem;
             }
@@ -82,10 +87,7 @@ namespace PIM4.Modelo
         {
             Reserva reserva = new Reserva();
             id = reserva.verificarUsuario(nome);
-            if (reserva.Mensagem.Equals(""))
-            {
-                this.Mensagem = reserva.Mensagem;
-            }
+            
             return id;
         }
         public string agendar(string nome, int qtd, double valor, string checkin, string checkout, int quarto, int id)
@@ -112,7 +114,7 @@ namespace PIM4.Modelo
             id = reserva.id;
             checkin = reserva.checkin;
             checkout = reserva.checkout;
-            if (reserva.Mensagem.Equals(""))
+            if (Mensagem.Equals(""))
             {
                 this.Mensagem = reserva.Mensagem;
             }
@@ -140,7 +142,6 @@ namespace PIM4.Modelo
         }
 
         //CheckIn CheckOut
-        private AbsPropriedades AbsProp;
 
         public Controle(int id_res) : base(id_res) { }
         public Controle(int id_res, string checkin_str) : base(id_res, checkin_str) { }

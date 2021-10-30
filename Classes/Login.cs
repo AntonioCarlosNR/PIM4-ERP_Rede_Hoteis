@@ -10,8 +10,6 @@ namespace PIM4.Classes
 {
     class Login: AbsPropriedades
     {
-        public bool Existe;
-        public string Mensagem = "";
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;

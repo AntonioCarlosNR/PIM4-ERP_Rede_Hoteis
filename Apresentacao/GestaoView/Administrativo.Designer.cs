@@ -42,6 +42,7 @@ namespace PIM4.Apresentacao.GestaoView
             this.btnAmdFunc.TabIndex = 0;
             this.btnAmdFunc.Text = "Administração de funcionários";
             this.btnAmdFunc.UseVisualStyleBackColor = true;
+            this.btnAmdFunc.Click += new System.EventHandler(this.btnAmdFunc_Click);
             // 
             // btnInOut
             // 

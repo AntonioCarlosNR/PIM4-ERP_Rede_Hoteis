@@ -15,8 +15,7 @@ namespace PIM4.Classes
         SqlCommand cmd = new SqlCommand();
         Conexao con = new Conexao();
         SqlDataReader dr;
-        public bool Existe;
-        public string Mensagem = "";
+        
 
         public int id = 0;
 
@@ -110,27 +109,19 @@ namespace PIM4.Classes
         }
         public bool apagar(int id)
         {
-            //comandos SQL se existem no BD 
-            cmd.CommandText = "delete from TB_Reserva where ID_Reserva = @id";
+            cmd.CommandText = "delete from TB_Check where ID_Reserva = @id;" +
+                              "delete from TB_Reserva where ID_Reserva = @id;";
             cmd.Parameters.AddWithValue("@id", id);
-
-            try
-            {
-                cmd.Connection = con.conectar();
-                //ExecuteReader() usado quando tem retorno tipo select
-                dr = cmd.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    Existe = true;
-                }
-                con.desconection();
-                this.Mensagem = "Excluido com sucesso!!!";
-                dr.Close();
-            }
-            catch (SqlException)
-            {
-                this.Mensagem = "Erro com o Banco de dados!!";
-            }
+            cmd.Connection = con.conectar();
+            //ExecuteReader() usado quando tem retorno tipo select
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows) {}
+                Existe = true;
+            
+            con.desconection();
+            this.Mensagem = "Excluido com sucesso!!!";
+            dr.Close();
+            
             return Existe;
         }
         public string atualizar(string nome, int qtd, double valor, string checkin, string checkout, int quarto, int id, int id_reserva)

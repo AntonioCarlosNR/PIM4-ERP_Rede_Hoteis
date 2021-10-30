@@ -23,5 +23,11 @@ namespace PIM4.Apresentacao.GestaoView
             CheckInOut inout = new CheckInOut();
             inout.Show();
         }
+
+        private void btnAmdFunc_Click(object sender, EventArgs e)
+        {
+            AdmFuncionario adm = new AdmFuncionario();
+            adm.Show();
+        }
     }
 }
