@@ -14,7 +14,7 @@ namespace PIM4.Modelo
         public int id;
 
         private AbsPropriedades AbsProp;
-        public Controle()
+        public Controle():base()
         {
             this.Mensagem = "";
         }
@@ -190,6 +190,9 @@ namespace PIM4.Modelo
 
             this.Mensagem = AbsProp.Mensagem;
         }
+
+        
+
 
     }
 }

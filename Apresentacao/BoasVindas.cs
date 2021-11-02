@@ -29,6 +29,11 @@ namespace PIM4.Apresentacao
             adm.Show();
 
         }
+        private void btnFinanceiro_Click(object sender, EventArgs e)
+        {
+            Financeiro financeiro = new Financeiro();
+            financeiro.Show();
+        }
 
         private void BoasVindas_Load(object sender, EventArgs e)
         {

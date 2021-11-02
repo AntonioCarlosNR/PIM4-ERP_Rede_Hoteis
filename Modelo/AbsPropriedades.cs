@@ -63,6 +63,7 @@ namespace PIM4.Modelo
         public virtual void Buscar() { }
         public virtual void Inserir() { }
         public virtual void Atualizar() { }
+
     }
     
 }

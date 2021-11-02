@@ -87,6 +87,7 @@ namespace PIM4.Apresentacao
             this.btnFinanceiro.TabIndex = 4;
             this.btnFinanceiro.Text = "Financeiro";
             this.btnFinanceiro.UseVisualStyleBackColor = true;
+            this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
             // 
             // BoasVindas
             // 
