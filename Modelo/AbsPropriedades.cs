@@ -64,6 +64,8 @@ namespace PIM4.Modelo
         public virtual void Inserir() { }
         public virtual void Atualizar() { }
 
+        //Conta a reeber
+        
     }
     
 }

@@ -38,9 +38,9 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
             this.lblContPagar.Font = new System.Drawing.Font("Calisto MT", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblContPagar.Location = new System.Drawing.Point(13, 22);
             this.lblContPagar.Name = "lblContPagar";
-            this.lblContPagar.Size = new System.Drawing.Size(265, 26);
+            this.lblContPagar.Size = new System.Drawing.Size(277, 26);
             this.lblContPagar.TabIndex = 0;
-            this.lblContPagar.Text = "Moulo  de Contas a Pagar";
+            this.lblContPagar.Text = "Modulo  de Contas a Pagar";
             // 
             // ContasPagar
             // 

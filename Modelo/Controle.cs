@@ -191,6 +191,22 @@ namespace PIM4.Modelo
             this.Mensagem = AbsProp.Mensagem;
         }
 
+        //Conta a receber
+
+        public string BuscarContReceb(int id_res)
+        {
+            ContaReceber contaReceber = new ContaReceber();
+            this.Mensagem = contaReceber.BuscaReserva(id_res);
+            if(this.Mensagem != "")
+            {
+                this.Mensagem = contaReceber.confirmaPg(id_res);
+            }
+            else
+            {
+                this.Mensagem = "Erro com o Banco de dados!!";
+            }
+            return this.Mensagem; 
+        }
         
 
 
