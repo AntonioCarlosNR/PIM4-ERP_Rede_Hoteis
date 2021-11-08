@@ -113,7 +113,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
         {
             conn = new Conexao();
 
-            string strSql = "select sum (Vl_Total) as Valor_total_Pago from TB_Reserva R left join TB_Check C on R.ID_Reserva = C.ID_Reserva left join TB_Receber B on B.ID_Reserva = R.ID_Reserva where B.St_Pagamento is NULL";
+            string strSql = "select sum (Vl_Total) as Valor_total_em_Aberto from TB_Reserva R left join TB_Check C on R.ID_Reserva = C.ID_Reserva left join TB_Receber B on B.ID_Reserva = R.ID_Reserva where B.St_Pagamento is NULL";
 
             //cria o objeto command para executar a instruçao sql
             SqlCommand cmd = new SqlCommand(strSql, conn.conectar());

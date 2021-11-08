@@ -41,9 +41,8 @@ namespace PIM4.Classes
 
         public string confirmaPg(int id_res)
         {
-            cmd.CommandText = "insert into TB_Receber (ID_Reserva, St_Pagamento) values (@id_res, 'Pago');";
+            cmd.CommandText = "insert into TB_Receber (ID_Reserva, St_Pagamento) values (@id_res, 'Pago')";
             cmd.Parameters.AddWithValue("@id_res", id_res);
-            //cmd.Parameters.AddWithValue("@St_Status", this.checkin_str);
 
             try
             {

@@ -191,8 +191,7 @@ namespace PIM4.Modelo
             this.Mensagem = AbsProp.Mensagem;
         }
 
-        //Conta a receber
-
+        //Conta a Receber
         public string BuscarContReceb(int id_res)
         {
             ContaReceber contaReceber = new ContaReceber();
@@ -208,7 +207,24 @@ namespace PIM4.Modelo
             return this.Mensagem; 
         }
         
+        //Contas a Pagar
+        public string inserirCp(double fornecedores, double impostos, double folhapg, double benficios, double alimentacao,
+          double dividendos, double agua, double banco, double limpeza, double escritorio, double manut, double aquimoveis, double consultoria, double telefone)
+        {
+            ContasPagar contasPagar = new ContasPagar();
+            this.Mensagem = contasPagar.inserirCp(fornecedores, impostos, folhapg, benficios, alimentacao, dividendos, agua, banco,
+                limpeza, escritorio, manut, aquimoveis, consultoria, telefone);
 
+            return this.Mensagem;
+        }
+
+        public string apagar()
+        {
+            ContasPagar contasPagar = new ContasPagar();
+            this.Mensagem = contasPagar.apagar();
+
+            return this.Mensagem;
+        }
 
     }
 }

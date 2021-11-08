@@ -109,7 +109,8 @@ namespace PIM4.Classes
         }
         public bool apagar(int id)
         {
-            cmd.CommandText = "delete from TB_Check where ID_Reserva = @id;" +
+            cmd.CommandText = "delete from TB_Receber where ID_Reserva = @id;" +
+                              "delete from TB_Check where ID_Reserva = @id;" +
                               "delete from TB_Reserva where ID_Reserva = @id;";
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Connection = con.conectar();
