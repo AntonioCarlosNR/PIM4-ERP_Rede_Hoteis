@@ -52,7 +52,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
             this.dataGridViewCP.Name = "dataGridViewCP";
             this.dataGridViewCP.RowHeadersWidth = 51;
             this.dataGridViewCP.RowTemplate.Height = 29;
-            this.dataGridViewCP.Size = new System.Drawing.Size(714, 203);
+            this.dataGridViewCP.Size = new System.Drawing.Size(846, 203);
             this.dataGridViewCP.TabIndex = 1;
             // 
             // btnTodosLancamentos
@@ -60,7 +60,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
             this.btnTodosLancamentos.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTodosLancamentos.Location = new System.Drawing.Point(42, 311);
             this.btnTodosLancamentos.Name = "btnTodosLancamentos";
-            this.btnTodosLancamentos.Size = new System.Drawing.Size(714, 35);
+            this.btnTodosLancamentos.Size = new System.Drawing.Size(846, 35);
             this.btnTodosLancamentos.TabIndex = 2;
             this.btnTodosLancamentos.Text = "Todos os Lançamentos";
             this.btnTodosLancamentos.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(930, 450);
             this.Controls.Add(this.btnTodosLancamentos);
             this.Controls.Add(this.dataGridViewCP);
             this.Controls.Add(this.lblTitulo);
