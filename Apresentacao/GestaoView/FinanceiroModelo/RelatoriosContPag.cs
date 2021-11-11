@@ -104,7 +104,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
         {
             conn = new Conexao();
 
-            string strSql = "select Alimentação, Tarifas_Bancarias, Material_de_Limpeza, Material_de_Escritorio  from TB_Pagar";
+            string strSql = "select Alimentação, Tarifas_Bancarias, Material_de_Limpeza, Material_de_Escritorio, Telefone_e_Internet, Aquisição_de_Bens_Moveis_e_Máq_e_Equip  from TB_Pagar;";
 
             //cria o objeto command para executar a instruçao sql
             SqlCommand cmd = new SqlCommand(strSql, conn.conectar());
@@ -124,7 +124,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
         {
             conn = new Conexao();
 
-            string strSql = "select sum (Alimentação) as Total_Alimentação, sum (Tarifas_Bancarias) as Total_Tarifas_Bancarias, sum (Material_de_Limpeza) as Total_Material_de_Limpeza, sum (Material_de_Escritorio) as Total_Material_de_Escritorio  from TB_Pagar;";
+            string strSql = "select sum (Alimentação) as Total_Alimentação, sum (Tarifas_Bancarias) as Total_Tarifas_Bancarias, sum (Material_de_Limpeza) as Total_Material_de_Limpeza, sum (Material_de_Escritorio) as Total_Material_de_Escritorio, sum (Telefone_e_Internet) as Total_Telefone_e_Internet, sum (Aquisição_de_Bens_Moveis_e_Máq_e_Equip) as Total_Aquisição_de_Bens_Moveis_e_Máq_e_Equip  from TB_Pagar;";
 
             //cria o objeto command para executar a instruçao sql
             SqlCommand cmd = new SqlCommand(strSql, conn.conectar());

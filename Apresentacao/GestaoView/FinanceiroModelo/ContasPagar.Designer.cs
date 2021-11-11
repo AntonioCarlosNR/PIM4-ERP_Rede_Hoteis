@@ -354,6 +354,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
             this.btnGerarPDF.TabIndex = 32;
             this.btnGerarPDF.Text = "Gerar PDF";
             this.btnGerarPDF.UseVisualStyleBackColor = true;
+            this.btnGerarPDF.Click += new System.EventHandler(this.btnGerarPDF_Click);
             // 
             // btnRelatorio
             // 

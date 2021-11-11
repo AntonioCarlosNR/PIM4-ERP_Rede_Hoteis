@@ -65,5 +65,44 @@ namespace PIM4.Classes
             }
             return Mensagem;
         }
+        public string BuscarPlanilha()
+        {
+            cmd.CommandText = "select sum (Fornecedores) as Total_Fornecedores, sum (Consultoria) as Total_Consultoria, sum (Impostos) as Total_Impostos, sum (Dividendos) as Total_Dividendos,sum(Folha_de_Pagamento) as Total_Folha_de_Pagamento, sum(Beneficios) as Total_Beneficios,sum(Alimentação) as Total_Alimentação, sum(Tarifas_Bancarias) as Total_Tarifas_Bancarias, sum(Material_de_Limpeza) as Total_Material_de_Limpeza, sum(Material_de_Escritorio) as Total_Material_de_Escritorio,sum(Água_Energia_Elétrica) as Total_Água_Energia_Elétrica, sum(Manutenção_e_Serviços) as Total_Manutenção_e_Serviços, sum(Telefone_e_Internet) as Total_Telefone_e_Internet, sum(Aquisição_de_Bens_Moveis_e_Máq_e_Equip) as Total_Aquisição_de_Bens_Moveis_e_Máq_e_Equip from TB_Pagar";
+            try
+            {
+                cmd.Connection = con.conectar();
+
+                //ExecuteReader() usado quando tem retorno tipo select
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    Existe = true;
+                    dr.Read();
+                    Fornecedores = dr.GetDecimal(0);
+                    Impostos = dr.GetDecimal(2);
+                    Folha_de_Pagamento = dr.GetDecimal(4);
+                    Beneficios = dr.GetDecimal(5);
+                    Alimentacao = dr.GetDecimal(6);
+                    Dividendos = dr.GetDecimal(3);
+                    Agua_Energia_Eletrica = dr.GetDecimal(10);
+                    Tarifas_Bancarias = dr.GetDecimal(7);
+                    Material_de_Limpeza = dr.GetDecimal(8);
+                    Material_de_Escritorio = dr.GetDecimal(9);
+                    Manutencao_e_Servicos = dr.GetDecimal(11);
+                    Aquisicao_de_Bens_Moveis_e_Maq_e_Equip = dr.GetDecimal(13);
+                    Consultoria = dr.GetDecimal(1);
+                    Telefone_e_Internet = dr.GetDecimal(12);
+
+                }
+                this.Mensagem = "Dados encontrados com sucesso";
+                con.desconection();
+                dr.Close();
+            }
+            catch (SqlException)
+            {
+                this.Mensagem = "Erro com o Banco de dados!!";
+            }
+            return Mensagem;
+        }
     }
 }

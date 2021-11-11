@@ -226,5 +226,11 @@ namespace PIM4.Modelo
             return this.Mensagem;
         }
 
+        //gerar PDF 
+        public void GerarPDF()
+        {
+            CriaPDF pdf = new CriaPDF();
+            pdf.GeraPDF();
+        }
     }
 }

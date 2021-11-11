@@ -31,8 +31,23 @@ namespace PIM4.Modelo
         public string checkin_str { get; set; }
         public string checkout_str { get; set; }
         public string statusReserva { get; set; }
-        //AdmFunc 
-     
+
+        //Contas a Pagar
+        public decimal Fornecedores { get; set; }
+        public decimal Impostos { get; set; }
+        public decimal Folha_de_Pagamento { get; set; }
+        public decimal Beneficios { get; set; }
+        public decimal Alimentacao { get; set; }
+        public decimal Dividendos { get; set; }
+        public decimal Agua_Energia_Eletrica { get; set; }
+        public decimal Tarifas_Bancarias { get; set; }
+        public decimal Material_de_Limpeza { get; set; }
+        public decimal Material_de_Escritorio { get; set; }
+        public decimal Manutencao_e_Servicos { get; set; }
+        public decimal Aquisicao_de_Bens_Moveis_e_Maq_e_Equip { get; set; }
+        public decimal Consultoria { get; set; }
+        public decimal Telefone_e_Internet { get; set; }
+
         protected AbsPropriedades()
         {
             this.Buscar();

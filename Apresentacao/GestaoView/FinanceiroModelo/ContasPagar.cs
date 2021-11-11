@@ -54,5 +54,11 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
             RelatoriosContPag contPag = new RelatoriosContPag();
             contPag.Show();
         }
+
+        private void btnGerarPDF_Click(object sender, EventArgs e)
+        {
+            Controle controle = new Controle();
+            controle.GerarPDF();
+        }
     }
 }
