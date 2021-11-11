@@ -30,11 +30,24 @@ namespace PIM4.Modelo
             }
             return Existe;
         }
-        
+
         //Cadastrar Usuario
+        public bool verificarCadastro(string login, string tabela)
+        {
+            Login login1 = new Login();
+
+            Existe = login1.verificarCadastro(login, tabela);
+            if (!Mensagem.Equals(""))
+            {
+                this.Mensagem = login1.Mensagem;
+            }
+            return Existe;
+        }
+
         public string cadastrar(string nome, string endereco,string email, string senha, string confsenha, long telefone, long cpf, string tabela)
         {
             Login login1 = new Login();
+
             this.Mensagem = login1.cadastrar(nome, endereco,email,senha,confsenha,telefone,cpf,tabela);
             if (login1.Existe)
             {
@@ -231,6 +244,14 @@ namespace PIM4.Modelo
         {
             CriaPDF pdf = new CriaPDF();
             pdf.GeraPDF();
+            if (pdf.doc.Equals(""))
+            {
+                this.Mensagem = "Não foi possivel gerar o PDF";
+            }
+            else
+            {
+                this.Mensagem = "preenchido";
+            }
         }
     }
 }

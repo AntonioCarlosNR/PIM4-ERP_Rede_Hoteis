@@ -34,6 +34,7 @@ namespace PIM4.Apresentacao
             this.btnCliAtv = new System.Windows.Forms.Button();
             this.btnAdm = new System.Windows.Forms.Button();
             this.btnFinanceiro = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -89,11 +90,23 @@ namespace PIM4.Apresentacao
             this.btnFinanceiro.UseVisualStyleBackColor = true;
             this.btnFinanceiro.Click += new System.EventHandler(this.btnFinanceiro_Click);
             // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.Location = new System.Drawing.Point(312, 399);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(170, 29);
+            this.btnSair.TabIndex = 5;
+            this.btnSair.Text = "Sair do sistema";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // BoasVindas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnFinanceiro);
             this.Controls.Add(this.btnAdm);
             this.Controls.Add(this.btnCliAtv);
@@ -115,5 +128,6 @@ namespace PIM4.Apresentacao
         private System.Windows.Forms.Button btnCliAtv;
         private System.Windows.Forms.Button btnAdm;
         private System.Windows.Forms.Button btnFinanceiro;
+        private System.Windows.Forms.Button btnSair;
     }
 }

@@ -34,17 +34,34 @@ namespace PIM4.Apresentacao
             long fone = Convert.ToInt64(txtFone.Text);
             long cpf = Convert.ToInt64(txtCpf.Text);
 
-            string mensagem = controle.cadastrar(txtNome.Text, txtEndereco.Text,txtLogin.Text,txtSenha.Text, txtConfSenha.Text, fone, cpf, tabela);
+            bool verifica = controle.verificarCadastro(txtLogin.Text, tabela);
 
-            if (controle.Existe)
+            if (verifica.Equals(false))
             {
-                MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string mensagem = controle.cadastrar(txtNome.Text, txtEndereco.Text, txtLogin.Text, txtSenha.Text, txtConfSenha.Text, fone, cpf, tabela);
+
+                if (controle.Existe)
+                {
+                    MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(controle.Mensagem);
+                }
             }
             else
             {
-                MessageBox.Show(controle.Mensagem);
-            }
+                MessageBox.Show(controle.Mensagem + " " + "Usuário/Cliente já cadastrado", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
 
+            txtIdCliente.Clear();
+            txtNome.Clear();
+            txtEndereco.Clear();
+            txtLogin.Clear();
+            txtFone.Clear();
+            txtCpf.Clear();
+            txtSenha.Clear();
+            txtConfSenha.Clear();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -58,15 +75,23 @@ namespace PIM4.Apresentacao
                 tabela = "TB_Usuario";
             }
             Controle controle = new Controle();
-            int id = Convert.ToInt32(txtIdCliente.Text);
-            controle.IdCliente(id, tabela);
 
-            txtNome.Text = controle.nome;
-            txtEndereco.Text = controle.endereco;
-            txtLogin.Text = controle.email;
-            txtFone.Text = Convert.ToString(controle.fone);
-            txtCpf.Text = Convert.ToString(controle.doc);
-            txtSenha.Text = controle.senha;
+            if (txtIdCliente.Text.Equals(""))
+            {
+                MessageBox.Show("Favor inserir algum valor para a pesquisa", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int id = Convert.ToInt32(txtIdCliente.Text);
+                controle.IdCliente(id, tabela);
+
+                txtNome.Text = controle.nome;
+                txtEndereco.Text = controle.endereco;
+                txtLogin.Text = controle.email;
+                txtFone.Text = Convert.ToString(controle.fone);
+                txtCpf.Text = Convert.ToString(controle.doc);
+                txtSenha.Text = controle.senha;
+            }            
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
@@ -128,6 +153,15 @@ namespace PIM4.Apresentacao
             {
                 MessageBox.Show(controle.Mensagem);
             }
+
+            txtIdCliente.Clear();
+            txtNome.Clear();
+            txtEndereco.Clear();
+            txtLogin.Clear();
+            txtFone.Clear();
+            txtCpf.Clear();
+            txtSenha.Clear();
+            txtConfSenha.Clear();
         }
 
         private void rdbCliente_CheckedChanged(object sender, EventArgs e)

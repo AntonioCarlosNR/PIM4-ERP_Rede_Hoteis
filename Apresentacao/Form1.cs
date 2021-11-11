@@ -33,7 +33,11 @@ namespace PIM4
                 if (controle.Existe)
                 {
                     MessageBox.Show("Logado com sucesso!!", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //fecha tela atual
+                    this.Hide();
+                    //abre nova tela
                     BoasVindas bv = new BoasVindas();
+                    bv.Closed += (s, args) => this.Close();
                     bv.Show();
                 }
                 else

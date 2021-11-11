@@ -16,6 +16,7 @@ namespace PIM4.Apresentacao
         public BoasVindas()
         {
             InitializeComponent();
+            
         }
 
         private void btnCliAtv_Click(object sender, EventArgs e)
@@ -40,6 +41,9 @@ namespace PIM4.Apresentacao
 
         }
 
-        
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

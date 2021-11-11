@@ -59,6 +59,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
         {
             Controle controle = new Controle();
             controle.GerarPDF();
+            MessageBox.Show(controle.Mensagem, "PDF", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

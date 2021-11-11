@@ -41,6 +41,40 @@ namespace PIM4.Classes
             return Existe;
         }
 
+        public bool verificarCadastro(string login, string tabela)
+        {
+            //comandos SQL se existem no BD 
+            switch (tabela)
+            {
+                case "TB_Cliente":
+                    cmd.CommandText = "select * from TB_Cliente where Ds_email = @login";
+                    break;
+                case "TB_Usuario":
+                    cmd.CommandText = "select * from TB_Usuario where Ds_email = @login";
+                    break;
+            }
+            cmd.Parameters.AddWithValue("@login", login);
+
+            try
+            {
+                cmd.Connection = con.conectar();
+                //ExecuteReader() usado quando tem retorno tipo select
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    this.Existe = true;
+                }                
+               
+                con.desconection();
+                dr.Close();
+            }
+            catch (SqlException)
+            {
+                this.Mensagem = "Erro com banco de dados";
+            }
+            return Existe;
+        }
+
         public string cadastrar(string nome, string endereco,string email, string senha, string confsenha, long telefone, long cpf, string tabela)
         {
             Existe = false;

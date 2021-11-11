@@ -39,12 +39,14 @@ namespace PIM4.Classes
             //Alinhamento Justificado
 
             //adicioando texto
+            paragrafo.Add("Plahnilha com os resultados do período\n\n");
+
             ContasPagar contasPagar = new ContasPagar();
             contasPagar.BuscarPlanilha();
 
             PdfPTable table = new PdfPTable(3);
 
-            table.AddCell("Fornecedores:" + this.Fornecedores);
+            table.AddCell("Fornecedores:" + contasPagar.Fornecedores);
             table.AddCell("Impostos:" + contasPagar.Impostos);
             table.AddCell("Folha_de_Pagamento:" + contasPagar.Folha_de_Pagamento);
             table.AddCell("Beneficios:" + contasPagar.Beneficios);
