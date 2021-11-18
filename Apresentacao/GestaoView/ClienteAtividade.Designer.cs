@@ -31,14 +31,16 @@ namespace PIM4.Apresentacao.GestaoView
         {
             this.btnCadastroCli = new System.Windows.Forms.Button();
             this.btnAgendaQuartos = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCadastroCli
             // 
             this.btnCadastroCli.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCadastroCli.Location = new System.Drawing.Point(52, 91);
+            this.btnCadastroCli.Location = new System.Drawing.Point(43, 73);
             this.btnCadastroCli.Name = "btnCadastroCli";
-            this.btnCadastroCli.Size = new System.Drawing.Size(160, 142);
+            this.btnCadastroCli.Size = new System.Drawing.Size(184, 160);
             this.btnCadastroCli.TabIndex = 0;
             this.btnCadastroCli.Text = "Cadastro de Cliente/Usuário";
             this.btnCadastroCli.UseVisualStyleBackColor = true;
@@ -47,19 +49,43 @@ namespace PIM4.Apresentacao.GestaoView
             // btnAgendaQuartos
             // 
             this.btnAgendaQuartos.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgendaQuartos.Location = new System.Drawing.Point(257, 91);
+            this.btnAgendaQuartos.Location = new System.Drawing.Point(292, 73);
             this.btnAgendaQuartos.Name = "btnAgendaQuartos";
-            this.btnAgendaQuartos.Size = new System.Drawing.Size(151, 142);
+            this.btnAgendaQuartos.Size = new System.Drawing.Size(183, 160);
             this.btnAgendaQuartos.TabIndex = 1;
             this.btnAgendaQuartos.Text = "Agendamento de Quartos";
             this.btnAgendaQuartos.UseVisualStyleBackColor = true;
             this.btnAgendaQuartos.Click += new System.EventHandler(this.btnAgendaQuartos_Click);
             // 
+            // btnMenu
+            // 
+            this.btnMenu.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMenu.Location = new System.Drawing.Point(66, 269);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(145, 29);
+            this.btnMenu.TabIndex = 2;
+            this.btnMenu.Text = "Munu Principal";
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.Location = new System.Drawing.Point(292, 269);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(145, 29);
+            this.btnSair.TabIndex = 3;
+            this.btnSair.Text = "Sair do Sistema";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // ClienteAtividade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 325);
+            this.ClientSize = new System.Drawing.Size(527, 332);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnAgendaQuartos);
             this.Controls.Add(this.btnCadastroCli);
             this.Name = "ClienteAtividade";
@@ -72,5 +98,7 @@ namespace PIM4.Apresentacao.GestaoView
 
         private System.Windows.Forms.Button btnCadastroCli;
         private System.Windows.Forms.Button btnAgendaQuartos;
+        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnSair;
     }
 }

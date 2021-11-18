@@ -31,6 +31,8 @@ namespace PIM4.Apresentacao.GestaoView
         {
             this.btnAmdFunc = new System.Windows.Forms.Button();
             this.btnInOut = new System.Windows.Forms.Button();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAmdFunc
@@ -47,19 +49,43 @@ namespace PIM4.Apresentacao.GestaoView
             // btnInOut
             // 
             this.btnInOut.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnInOut.Location = new System.Drawing.Point(304, 74);
+            this.btnInOut.Location = new System.Drawing.Point(304, 76);
             this.btnInOut.Name = "btnInOut";
-            this.btnInOut.Size = new System.Drawing.Size(175, 131);
+            this.btnInOut.Size = new System.Drawing.Size(186, 129);
             this.btnInOut.TabIndex = 1;
             this.btnInOut.Text = "CheckIn/CheckOut";
             this.btnInOut.UseVisualStyleBackColor = true;
             this.btnInOut.Click += new System.EventHandler(this.btnInOut_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMenu.Location = new System.Drawing.Point(74, 267);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(154, 29);
+            this.btnMenu.TabIndex = 2;
+            this.btnMenu.Text = "Menu Principal";
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSair.Location = new System.Drawing.Point(304, 267);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(154, 29);
+            this.btnSair.TabIndex = 3;
+            this.btnSair.Text = "Sair do Sistema";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // Administrativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 320);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnInOut);
             this.Controls.Add(this.btnAmdFunc);
             this.Name = "Administrativo";
@@ -72,5 +98,7 @@ namespace PIM4.Apresentacao.GestaoView
 
         private System.Windows.Forms.Button btnAmdFunc;
         private System.Windows.Forms.Button btnInOut;
+        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button btnSair;
     }
 }

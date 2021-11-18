@@ -21,18 +21,30 @@ namespace PIM4.Apresentacao
 
         private void btnCliAtv_Click(object sender, EventArgs e)
         {
+            //fecha tela atual
+            this.Hide();
+            //abre nova tela
             ClienteAtividade cliatv = new ClienteAtividade();
+            cliatv.Closed += (s, args) => this.Close();
             cliatv.Show();
         }
         private void btnAdm_Click(object sender, EventArgs e)
         {
+            //fecha tela atual
+            this.Hide();
+            //abre nova tela
             Administrativo adm = new Administrativo();
+            adm.Closed += (s, args) => this.Close();
             adm.Show();
 
         }
         private void btnFinanceiro_Click(object sender, EventArgs e)
         {
+            //fecha tela atual
+            this.Hide();
+            //abre nova tela
             Financeiro financeiro = new Financeiro();
+            financeiro.Closed += (s, args) => this.Close();
             financeiro.Show();
         }
 

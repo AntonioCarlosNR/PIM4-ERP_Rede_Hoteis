@@ -29,5 +29,20 @@ namespace PIM4.Apresentacao.GestaoView
             AdmFuncionario adm = new AdmFuncionario();
             adm.Show();
         }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            //fecha tela atual
+            this.Hide();
+            //abre nova tela
+            BoasVindas bv = new BoasVindas();
+            bv.Closed += (s, args) => this.Close();
+            bv.Show();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -29,5 +29,20 @@ namespace PIM4.Apresentacao.GestaoView
             ContasPagar contasPagar = new ContasPagar();
             contasPagar.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //fecha tela atual
+            this.Hide();
+            //abre nova tela
+            BoasVindas bv = new BoasVindas();
+            bv.Closed += (s, args) => this.Close();
+            bv.Show();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
