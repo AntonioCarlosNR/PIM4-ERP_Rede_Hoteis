@@ -34,9 +34,9 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.lblQtdPessoas = new System.Windows.Forms.Label();
             this.txtQtdPessoas = new System.Windows.Forms.TextBox();
             this.dtcheckin = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblCheckIn = new System.Windows.Forms.Label();
             this.dtCheckout = new System.Windows.Forms.DateTimePicker();
-            this.lblChechOut = new System.Windows.Forms.Label();
+            this.lblCheckOut = new System.Windows.Forms.Label();
             this.btnAgendarQuarto = new System.Windows.Forms.Button();
             this.lblValorPagar = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -93,15 +93,15 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.dtcheckin.Size = new System.Drawing.Size(312, 27);
             this.dtcheckin.TabIndex = 4;
             // 
-            // label2
+            // lblCheckIn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(127, 179);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 21);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "CheckIn";
+            this.lblCheckIn.AutoSize = true;
+            this.lblCheckIn.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCheckIn.Location = new System.Drawing.Point(127, 179);
+            this.lblCheckIn.Name = "lblCheckIn";
+            this.lblCheckIn.Size = new System.Drawing.Size(75, 21);
+            this.lblCheckIn.TabIndex = 5;
+            this.lblCheckIn.Text = "CheckIn";
             // 
             // dtCheckout
             // 
@@ -110,15 +110,15 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.dtCheckout.Size = new System.Drawing.Size(312, 27);
             this.dtCheckout.TabIndex = 6;
             // 
-            // lblChechOut
+            // lblCheckOut
             // 
-            this.lblChechOut.AutoSize = true;
-            this.lblChechOut.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblChechOut.Location = new System.Drawing.Point(115, 233);
-            this.lblChechOut.Name = "lblChechOut";
-            this.lblChechOut.Size = new System.Drawing.Size(87, 21);
-            this.lblChechOut.TabIndex = 7;
-            this.lblChechOut.Text = "CheckOut";
+            this.lblCheckOut.AutoSize = true;
+            this.lblCheckOut.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCheckOut.Location = new System.Drawing.Point(115, 233);
+            this.lblCheckOut.Name = "lblCheckOut";
+            this.lblCheckOut.Size = new System.Drawing.Size(87, 21);
+            this.lblCheckOut.TabIndex = 7;
+            this.lblCheckOut.Text = "CheckOut";
             // 
             // btnAgendarQuarto
             // 
@@ -249,9 +249,9 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.lblValorPagar);
             this.Controls.Add(this.btnAgendarQuarto);
-            this.Controls.Add(this.lblChechOut);
+            this.Controls.Add(this.lblCheckOut);
             this.Controls.Add(this.dtCheckout);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblCheckIn);
             this.Controls.Add(this.dtcheckin);
             this.Controls.Add(this.txtQtdPessoas);
             this.Controls.Add(this.lblQtdPessoas);
@@ -272,9 +272,9 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
         private System.Windows.Forms.Label lblQtdPessoas;
         private System.Windows.Forms.TextBox txtQtdPessoas;
         private System.Windows.Forms.DateTimePicker dtcheckin;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCheckIn;
         private System.Windows.Forms.DateTimePicker dtCheckout;
-        private System.Windows.Forms.Label lblChechOut;
+        private System.Windows.Forms.Label lblCheckOut;
         private System.Windows.Forms.Button btnAgendarQuarto;
         private System.Windows.Forms.Label lblValorPagar;
         private System.Windows.Forms.TextBox txtValor;

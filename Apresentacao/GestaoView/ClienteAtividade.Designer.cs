@@ -60,7 +60,7 @@ namespace PIM4.Apresentacao.GestaoView
             // btnMenu
             // 
             this.btnMenu.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMenu.Location = new System.Drawing.Point(66, 269);
+            this.btnMenu.Location = new System.Drawing.Point(82, 269);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(145, 29);
             this.btnMenu.TabIndex = 2;
