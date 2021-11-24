@@ -26,7 +26,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
         private void btnAgendarQuarto_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
-            txtId.Text = Convert.ToString(controle.getIdCliente(txtNomeHospede.Text));
+            txtId.Text = Convert.ToString(controle.getIdCliente(txtNomeHospede.Text));           
 
             if(controle.getIdCliente(txtNomeHospede.Text) != 0)
             {
@@ -40,10 +40,18 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
                 if (controle.Existe)
                 {
                     MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtIdReserva.Clear();
+                    txtNomeHospede.Clear();
+                    txtQtdPessoas.Clear();
+                    txtQuarto.Clear();
+                    txtValor.Clear();
+                    txtId.Clear();
+                    dtcheckin.Value = DateTime.Now;
+                    dtCheckout.Value = DateTime.Now;
                 }
                 else
                 {
-                    MessageBox.Show(controle.Mensagem);
+                    MessageBox.Show(controle.Mensagem,"Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -81,8 +89,8 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
                 txtQuarto.Clear();
                 txtValor.Clear();
                 txtId.Clear();
-                //dtcheckin.Value = controle.checkin;
-                //dtCheckout.Value = controle.checkout;
+                dtcheckin.Value = DateTime.Now;
+                dtCheckout.Value = DateTime.Now;
 
             }
             else
@@ -104,6 +112,14 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             if (controle.Existe)
             {
                 MessageBox.Show(mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIdReserva.Clear();
+                txtNomeHospede.Clear();
+                txtQtdPessoas.Clear();
+                txtQuarto.Clear();
+                txtValor.Clear();
+                txtId.Clear();
+                dtcheckin.Value = DateTime.Now;
+                dtCheckout.Value = DateTime.Now;
             }
             else
             {

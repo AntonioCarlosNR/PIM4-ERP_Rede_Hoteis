@@ -64,7 +64,7 @@ namespace PIM4.Apresentacao.GestaoView
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(145, 29);
             this.btnMenu.TabIndex = 2;
-            this.btnMenu.Text = "Munu Principal";
+            this.btnMenu.Text = "Menu Principal";
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 

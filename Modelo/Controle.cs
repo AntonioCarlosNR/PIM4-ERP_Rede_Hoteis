@@ -9,8 +9,7 @@ namespace PIM4.Modelo
 {
     public class Controle: AbsPropriedades
     {
-        //public bool Existe;
-        //public string Mensagem = "";
+
         public int id;
 
         private AbsPropriedades AbsProp;
@@ -18,7 +17,8 @@ namespace PIM4.Modelo
         {
             this.Mensagem = "";
         }
-
+        //Login
+        #region
         public bool acessar(string login, string senha)
         {
             this.Mensagem = ""; 
@@ -30,8 +30,10 @@ namespace PIM4.Modelo
             }
             return Existe;
         }
+        #endregion
 
         //Cadastrar Usuario
+        #region
         public bool verificarCadastro(string login, string tabela)
         {
             Login login1 = new Login();
@@ -94,8 +96,10 @@ namespace PIM4.Modelo
             }
             return Mensagem;
         }
+        #endregion
 
         //Agendamento de quarto
+        #region
         public int getIdCliente(string nome)
         {
             Reserva reserva = new Reserva();
@@ -105,12 +109,23 @@ namespace PIM4.Modelo
         }
         public string agendar(string nome, int qtd, double valor, string checkin, string checkout, int quarto, int id)
         {
-            Reserva reserva = new Reserva();
-            this.Mensagem = reserva.agendar(nome, qtd, valor, checkin, checkout, quarto, id);
-            if (reserva.Existe)
+            DateTime ckout = Convert.ToDateTime(checkout);
+            DateTime ckin = Convert.ToDateTime(checkin);
+            DateTime now = DateTime.Now;
+
+            if(ckout >= ckin && ckout >= now && ckin >= now)
             {
-                this.Existe = true;
+                Reserva reserva = new Reserva();
+                this.Mensagem = reserva.agendar(nome, qtd, valor, checkin, checkout, quarto, id);
+                if (reserva.Existe)
+                {
+                    this.Existe = true;
+                }
             }
+            else
+            {
+                this.Mensagem = "Datas invalidas";
+            }            
 
             return Mensagem;
         }
@@ -153,9 +168,10 @@ namespace PIM4.Modelo
             }
             return Mensagem;
         }
+        #endregion
 
         //CheckIn CheckOut
-
+        #region
         public Controle(int id_res) : base(id_res) { }
         public Controle(int id_res, string checkin_str) : base(id_res, checkin_str) { }
         public override void Buscar()
@@ -203,8 +219,10 @@ namespace PIM4.Modelo
 
             this.Mensagem = AbsProp.Mensagem;
         }
+        #endregion
 
         //Conta a Receber
+        #region
         public string BuscarContReceb(int id_res)
         {
             ContaReceber contaReceber = new ContaReceber();
@@ -219,8 +237,10 @@ namespace PIM4.Modelo
             }
             return this.Mensagem; 
         }
-        
+        #endregion
+
         //Contas a Pagar
+        #region
         public string inserirCp(double fornecedores, double impostos, double folhapg, double benficios, double alimentacao,
           double dividendos, double agua, double banco, double limpeza, double escritorio, double manut, double aquimoveis, double consultoria, double telefone)
         {
@@ -253,5 +273,6 @@ namespace PIM4.Modelo
                 this.Mensagem = "preenchido";
             }
         }
+        #endregion
     }
 }

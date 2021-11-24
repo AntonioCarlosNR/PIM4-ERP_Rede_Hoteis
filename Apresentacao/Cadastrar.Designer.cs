@@ -210,12 +210,12 @@ namespace PIM4.Apresentacao
             // 
             this.lblIdCliente.AutoSize = true;
             this.lblIdCliente.Font = new System.Drawing.Font("Calisto MT", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblIdCliente.Location = new System.Drawing.Point(66, 14);
+            this.lblIdCliente.Location = new System.Drawing.Point(125, 9);
             this.lblIdCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(91, 21);
+            this.lblIdCliente.Size = new System.Drawing.Size(32, 21);
             this.lblIdCliente.TabIndex = 15;
-            this.lblIdCliente.Text = "ID Cliente";
+            this.lblIdCliente.Text = "ID";
             // 
             // txtIdCliente
             // 
