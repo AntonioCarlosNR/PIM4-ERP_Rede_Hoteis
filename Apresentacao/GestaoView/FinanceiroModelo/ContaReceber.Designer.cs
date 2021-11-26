@@ -174,6 +174,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
             this.Controls.Add(this.lblId_res);
             this.Controls.Add(this.lblContReceber);
             this.Name = "ContaReceber";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ContaReceber";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContReceb)).EndInit();
             this.ResumeLayout(false);

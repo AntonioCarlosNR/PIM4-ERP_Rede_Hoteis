@@ -259,6 +259,7 @@ namespace PIM4.Apresentacao.GestaoView.CliAtvModelo
             this.Controls.Add(this.lblNomeHospede);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AgendamentoQuartos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgendamentoQuartos";
             this.ResumeLayout(false);
             this.PerformLayout();

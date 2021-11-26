@@ -89,6 +89,7 @@ namespace PIM4.Apresentacao.GestaoView
             this.Controls.Add(this.btnReceber);
             this.Controls.Add(this.btnPagar);
             this.Name = "Financeiro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Financeiro";
             this.ResumeLayout(false);
 

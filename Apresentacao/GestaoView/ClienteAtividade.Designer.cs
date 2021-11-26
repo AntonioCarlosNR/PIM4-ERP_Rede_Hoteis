@@ -89,6 +89,7 @@ namespace PIM4.Apresentacao.GestaoView
             this.Controls.Add(this.btnAgendaQuartos);
             this.Controls.Add(this.btnCadastroCli);
             this.Name = "ClienteAtividade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ClienteAtividade";
             this.ResumeLayout(false);
 

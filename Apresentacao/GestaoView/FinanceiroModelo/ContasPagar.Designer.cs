@@ -407,6 +407,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
             this.Controls.Add(this.lblFornecedor);
             this.Controls.Add(this.lblContPagar);
             this.Name = "ContasPagar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ContasPagar";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -167,6 +167,7 @@ namespace PIM4.Apresentacao.GestaoView.FinanceiroModelo
             this.Controls.Add(this.btnTodosLancamentos);
             this.Controls.Add(this.dataGridViewCP);
             this.Name = "RelatoriosContPag";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RelatoriosContPag";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCP)).EndInit();
             this.ResumeLayout(false);

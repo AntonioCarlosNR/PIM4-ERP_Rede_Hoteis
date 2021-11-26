@@ -90,6 +90,7 @@ namespace PIM4.Apresentacao.GestaoView.AdmModelo
             this.Controls.Add(this.btnStaReserv);
             this.Controls.Add(this.dataGridViewAdm);
             this.Name = "AdmFuncionario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdmFuncionario";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAdm)).EndInit();
             this.ResumeLayout(false);

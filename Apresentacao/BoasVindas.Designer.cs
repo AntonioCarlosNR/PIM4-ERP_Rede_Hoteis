@@ -114,6 +114,7 @@ namespace PIM4.Apresentacao
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "BoasVindas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BoasVindas";
             this.Load += new System.EventHandler(this.BoasVindas_Load);
             this.ResumeLayout(false);

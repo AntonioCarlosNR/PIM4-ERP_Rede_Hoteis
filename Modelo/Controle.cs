@@ -270,7 +270,7 @@ namespace PIM4.Modelo
             }
             else
             {
-                this.Mensagem = "preenchido";
+                this.Mensagem = "PDF Gerado com sucesso!!!";
             }
         }
         #endregion

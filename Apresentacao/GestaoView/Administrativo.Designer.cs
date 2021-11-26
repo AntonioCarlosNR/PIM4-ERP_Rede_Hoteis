@@ -89,6 +89,7 @@ namespace PIM4.Apresentacao.GestaoView
             this.Controls.Add(this.btnInOut);
             this.Controls.Add(this.btnAmdFunc);
             this.Name = "Administrativo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administrativo";
             this.ResumeLayout(false);
 

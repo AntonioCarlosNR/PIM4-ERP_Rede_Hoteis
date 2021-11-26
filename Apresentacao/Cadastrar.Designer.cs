@@ -315,6 +315,7 @@ namespace PIM4.Apresentacao
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Cadastrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar";
             this.ResumeLayout(false);
             this.PerformLayout();

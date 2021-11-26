@@ -109,6 +109,7 @@ namespace PIM4.Apresentacao.GestaoView.AdmModelo
             this.Controls.Add(this.txtIdReser);
             this.Controls.Add(this.lblIdReser);
             this.Name = "CheckInOut";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CheckInOut";
             this.ResumeLayout(false);
             this.PerformLayout();
